@@ -100,5 +100,14 @@
     <Resource Include="ペルソナ_立ち絵_背景_解放.png" />
     <Resource Include="ペルソナ_立ち絵_背景_通常.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="テキスト1.png" />
+    <Resource Include="ディレクトリ3.png" />
+    <Resource Include="画像A.png" />
+    <Resource Include="画像B.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="関連付け.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -24,6 +24,7 @@ namespace PersonaLauncher
 		{
 			InitializeComponent();
 
+			this.sb2.Completed += Storyboard_Completed;
 			//どこかを持てばドラッグして移動できるようにする
 			//this.MouseLeftButtonDown += (sender, e) => { this.DragMove(); };
 		}
@@ -38,6 +39,11 @@ namespace PersonaLauncher
 		private void Persona_Drag(object sender, MouseButtonEventArgs e)
 		{
 			this.DragMove();
+		}
+
+		private void Storyboard_Completed(object sender, EventArgs e)
+		{
+			System.Diagnostics.Process process = System.Diagnostics.Process.Start(@"D:\programming\GitHub\PersonaLauncher\PersonaLauncher\PersonaLauncher\関連付け.png");
 		}
 	}
 }
