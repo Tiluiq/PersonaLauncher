@@ -1,0 +1,16 @@
+﻿<Image x:Class="PersonaLauncher.DataItem"
+	   xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	   xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	   xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+	   xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+	   xmlns:local="clr-namespace:PersonaLauncher"
+	   mc:Ignorable="d"
+	   MouseLeftButtonUp="DataLeftClick"
+	   >
+	<Image.ContextMenu>
+		<ContextMenu>
+			<MenuItem Header="ファイル選択" Click="FileSelect" />
+			<MenuItem Header="ディレクトリ選択" Click="DirectorySelect" />
+		</ContextMenu>
+	</Image.ContextMenu>
+</Image>

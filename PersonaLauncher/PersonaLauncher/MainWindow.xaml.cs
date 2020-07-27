@@ -24,15 +24,18 @@ namespace PersonaLauncher
 		{
 			InitializeComponent();
 
-			this.sb2.Completed += Storyboard_Completed;
+			//this.sb2.Completed += Storyboard_Completed;
 			//どこかを持てばドラッグして移動できるようにする
 			//this.MouseLeftButtonDown += (sender, e) => { this.DragMove(); };
 		}
 
 		public void Data_Click(object sender, MouseButtonEventArgs e)
 		{
-			//MessageBox.Show("データがクリックされました");
-
+			////MessageBox.Show("データがクリックされました");
+			//if (sender.GetType() == typeof(DataItem))
+			//{
+			//	((DataItem)sender).Data_Click(e);
+			//}
 		}
 
 		//ペルソナをドラッグできるようにする
@@ -45,5 +48,6 @@ namespace PersonaLauncher
 		{
 			System.Diagnostics.Process process = System.Diagnostics.Process.Start(@"D:\programming\GitHub\PersonaLauncher\PersonaLauncher\PersonaLauncher\関連付け.png");
 		}
+
 	}
 }

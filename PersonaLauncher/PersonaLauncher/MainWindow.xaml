@@ -5,95 +5,28 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PersonaLauncher"
         mc:Ignorable="d"
-        Title="Persona Launcher ver 0.0.2" Height="600" Width="800"
+        Title="Persona Launcher ver 0.0.3" Height="600" Width="800"
 		
 		WindowStyle="SingleBorderWindow"
 		
 		Background="#111122"
+		ResizeMode="NoResize"
 		>
 	<!--AllowsTransparency="True"-->
 	<Canvas>
-		<Image Name="Data2" Source="画像B.png" Opacity="1" Stretch="Fill" MouseLeftButtonUp="Data_Click" Height="150" Width="150" Canvas.Left="600" Canvas.Top="330" />
-		<Image Name="Data3" Source="テキスト1.png" Opacity="1" Stretch="Fill" MouseLeftButtonUp="Data_Click" Height="150" Width="150" Canvas.Left="50" Canvas.Top="30" />
-		<Image Name="Data4" Source="ディレクトリ3.png" Opacity="1" Stretch="Fill" MouseLeftButtonUp="Data_Click" Height="150" Width="150" Canvas.Left="50" Canvas.Top="330" />
-
-
+		
+		<!---->
 		<Image Name="Persona" Source="ペルソナ_立ち絵_背景_通常.png" Opacity="1"
 			   Width="{Binding RelativeSource={RelativeSource Self}, Path=Source.PixelWidth}"
 			   Height="{Binding RelativeSource={RelativeSource Self}, Path=Source.PixelHeight}" MouseLeftButtonDown="Persona_Drag" Canvas.Left="35" Canvas.Top="30"/>
-		<Image Name="Data" Source="画像A.png" Opacity="1" Stretch="Fill" MouseLeftButtonUp="Data_Click" Height="150" Width="150" Canvas.Left="600" Canvas.Top="30">
-			<Image.Triggers>
-				<EventTrigger RoutedEvent="Image.MouseLeftButtonUp">
-					<BeginStoryboard>
-						<Storyboard x:Name="sb1">
-							<ObjectAnimationUsingKeyFrames
-								Storyboard.TargetName="Persona"
-								Storyboard.TargetProperty="(Image.Source)"
-								Duration="0:0:7">
-								<DiscreteObjectKeyFrame KeyTime="0:0:0">
-									<DiscreteObjectKeyFrame.Value>
-										<BitmapImage UriSource="ペルソナ_立ち絵_背景_通常.png" />
-									</DiscreteObjectKeyFrame.Value>
-								</DiscreteObjectKeyFrame>
-								<DiscreteObjectKeyFrame KeyTime="0:0:1">
-									<DiscreteObjectKeyFrame.Value>
-										<BitmapImage UriSource="ペルソナ_立ち絵_背景_キャッチ.png" />
-									</DiscreteObjectKeyFrame.Value>
-								</DiscreteObjectKeyFrame>
-								<DiscreteObjectKeyFrame KeyTime="0:0:4">
-									<DiscreteObjectKeyFrame.Value>
-										<BitmapImage UriSource="ペルソナ_立ち絵_背景_解放.png" />
-									</DiscreteObjectKeyFrame.Value>
-								</DiscreteObjectKeyFrame>
-								<DiscreteObjectKeyFrame KeyTime="0:0:7">
-									<DiscreteObjectKeyFrame.Value>
-										<BitmapImage UriSource="ペルソナ_立ち絵_背景_通常.png" />
-									</DiscreteObjectKeyFrame.Value>
-								</DiscreteObjectKeyFrame>
-							</ObjectAnimationUsingKeyFrames>
-						</Storyboard>
-					</BeginStoryboard>
-				</EventTrigger>
-				<EventTrigger RoutedEvent="Image.MouseLeftButtonUp">
-					<BeginStoryboard>
-						<Storyboard x:Name="sb2" Completed="Storyboard_Completed">
-							<!-- データの移動 -->
-							<DoubleAnimationUsingKeyFrames
-								Storyboard.TargetName="Data"
-								Storyboard.TargetProperty="(Canvas.Left)"
-								Duration="0:0:7"
-								>
-								<DiscreteDoubleKeyFrame KeyTime="0:0:1" Value="600" />
-								<LinearDoubleKeyFrame KeyTime="0:0:3" Value="435">
+		
+		<local:DataItem x:Name="Data" Source="画像A.png" Opacity="1" Stretch="Fill" Height="150" Width="150" Canvas.Left="600" Canvas.Top="30">
+			
+		</local:DataItem>
 
-								</LinearDoubleKeyFrame>
-								<DiscreteDoubleKeyFrame KeyTime="0:0:7" Value="600" />
-							</DoubleAnimationUsingKeyFrames>
-						</Storyboard>
-					</BeginStoryboard>
-					<BeginStoryboard>
-						<Storyboard x:Name="sb3">
-							<!-- データの移動 -->
-							<DoubleAnimationUsingKeyFrames
-								Storyboard.TargetName="Data"
-								Storyboard.TargetProperty="(Canvas.Top)"
-								Duration="0:0:7"
-								>
-								<DiscreteDoubleKeyFrame KeyTime="0:0:1" Value="30" />
-								<EasingDoubleKeyFrame KeyTime="0:0:3" Value="240">
-									<EasingDoubleKeyFrame.EasingFunction>
-										<QuadraticEase EasingMode="EaseOut" />
-									</EasingDoubleKeyFrame.EasingFunction>
-								</EasingDoubleKeyFrame>
-								<DiscreteDoubleKeyFrame KeyTime="0:0:4" Value="-200" />
-								<!-- 見えないところに移動？ -->
-								<DiscreteDoubleKeyFrame KeyTime="0:0:7" Value="30" />
-							</DoubleAnimationUsingKeyFrames>
-						</Storyboard>
-					</BeginStoryboard>
-				</EventTrigger>
-			</Image.Triggers>
-		</Image>
+		<local:DataItem x:Name="Data2" Source="画像B.png" Opacity="1" Stretch="Fill" Height="150" Width="150" Canvas.Left="600" Canvas.Top="330" />
+		<local:DataItem x:Name="Data3" Source="テキスト1.png" Opacity="1" Stretch="Fill" MouseLeftButtonUp="Data_Click" Height="150" Width="150" Canvas.Left="50" Canvas.Top="30" />
+		<local:DataItem x:Name="Data4" Source="ディレクトリ3.png" Opacity="1" Stretch="Fill" MouseLeftButtonUp="Data_Click" Height="150" Width="150" Canvas.Left="50" Canvas.Top="330" />
 
 
 	</Canvas>
