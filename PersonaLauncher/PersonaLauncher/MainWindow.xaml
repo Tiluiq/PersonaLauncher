@@ -20,13 +20,10 @@
 			   Width="{Binding RelativeSource={RelativeSource Self}, Path=Source.PixelWidth}"
 			   Height="{Binding RelativeSource={RelativeSource Self}, Path=Source.PixelHeight}" MouseLeftButtonDown="Persona_Drag" Canvas.Left="35" Canvas.Top="30"/>
 		
-		<local:DataItem x:Name="Data" Source="画像A.png" Opacity="1" Stretch="Fill" Height="150" Width="150" Canvas.Left="600" Canvas.Top="30">
-			
-		</local:DataItem>
-
-		<local:DataItem x:Name="Data2" Source="画像B.png" Opacity="1" Stretch="Fill" Height="150" Width="150" Canvas.Left="600" Canvas.Top="330" />
-		<local:DataItem x:Name="Data3" Source="テキスト1.png" Opacity="1" Stretch="Fill" MouseLeftButtonUp="Data_Click" Height="150" Width="150" Canvas.Left="50" Canvas.Top="30" />
-		<local:DataItem x:Name="Data4" Source="ディレクトリ3.png" Opacity="1" Stretch="Fill" MouseLeftButtonUp="Data_Click" Height="150" Width="150" Canvas.Left="50" Canvas.Top="330" />
+		<local:DataItem x:Name="Data0" ImageSource="ファイル.png" Opacity="1" ImageStretch="Fill" Height="150" Width="150" Canvas.Left="600" Canvas.Top="30" />
+		<local:DataItem x:Name="Data1" ImageSource="ファイル.png" Opacity="1" ImageStretch="Fill" Height="150" Width="150" Canvas.Left="600" Canvas.Top="330" />
+		<local:DataItem x:Name="Data2" ImageSource="ファイル.png" Opacity="1" ImageStretch="Fill" MouseLeftButtonUp="Data_Click" Height="150" Width="150" Canvas.Left="50" Canvas.Top="30" />
+		<local:DataItem x:Name="Data3" ImageSource="ファイル.png" Opacity="1" ImageStretch="Fill" MouseLeftButtonUp="Data_Click" Height="150" Width="150" Canvas.Left="50" Canvas.Top="330" />
 
 
 	</Canvas>

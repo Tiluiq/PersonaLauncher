@@ -1,4 +1,4 @@
-﻿<Image x:Class="PersonaLauncher.DataItem"
+﻿<Grid x:Class="PersonaLauncher.DataItem"
 	   xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
 	   xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
 	   xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
@@ -7,10 +7,13 @@
 	   mc:Ignorable="d"
 	   MouseLeftButtonUp="DataLeftClick"
 	   >
-	<Image.ContextMenu>
+	<Grid.ContextMenu>
 		<ContextMenu>
 			<MenuItem Header="ファイル選択" Click="FileSelect" />
 			<MenuItem Header="ディレクトリ選択" Click="DirectorySelect" />
 		</ContextMenu>
-	</Image.ContextMenu>
-</Image>
+	</Grid.ContextMenu>
+	<Image x:Name="image" Source="{Binding RelativeSource={RelativeSource AncestorType={x:Type Grid}},Path=ImageSource}"
+		   Stretch="{Binding RelativeSource={RelativeSource AncestorType={x:Type Grid}},Path=ImageStretch}" />
+	<TextBlock x:Name="textBlock" Text="{Binding fileOrDirectoryName}" TextAlignment="Center" VerticalAlignment="Center" />
+</Grid>

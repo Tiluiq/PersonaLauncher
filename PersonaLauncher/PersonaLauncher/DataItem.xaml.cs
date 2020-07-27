@@ -19,15 +19,35 @@ namespace PersonaLauncher
 	/// <summary>
 	/// DataItem.xaml の相互作用ロジック
 	/// </summary>
-	public partial class DataItem : Image
+	public partial class DataItem : Grid
 	{
 		string filePath = "";
 		string directoryPath = "";
 
+
 		public DataItem()
 		{
 			InitializeComponent();
+			this.DataContext = new
+			{
+				fileOrDirectoryName = "NO DATA"
+			};
 		}
+
+		public static readonly DependencyProperty Source = DependencyProperty.Register("ImageSource", typeof(string), typeof(DataItem));
+		public string ImageSource
+		{
+			get { return (string)this.GetValue(Source); }
+			set { this.SetValue(Source, value); }
+		}
+		public static readonly DependencyProperty Stretch = DependencyProperty.Register("ImageStretch", typeof(string), typeof(DataItem));
+		public string ImageStretch
+		{
+			get { return (string)this.GetValue(Source); }
+			set { this.SetValue(Source, value); }
+		}
+
+		
 
 		private void FileSelect(object sender, RoutedEventArgs e)
 		{
@@ -36,6 +56,10 @@ namespace PersonaLauncher
 			if (openFileDialog.ShowDialog() == true)
 			{
 				filePath = openFileDialog.FileName;
+				this.DataContext = new
+				{
+					fileOrDirectoryName = System.IO.Path.GetFileName(filePath)
+				};
 			}
 		}
 
@@ -47,6 +71,10 @@ namespace PersonaLauncher
 			if (openDirectoryDialog.ShowDialog() == Microsoft.WindowsAPICodePack.Dialogs.CommonFileDialogResult.Ok)
 			{
 				directoryPath = openDirectoryDialog.FileName;
+				this.DataContext = new
+				{
+					fileOrDirectoryName = System.IO.Path.GetFileName(directoryPath)
+				};
 			}
 		}
 
