@@ -1,0 +1,16 @@
+﻿<Grid x:Class="PersonaLauncher.Persona"
+	   xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	   xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	   xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+	   xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+	   xmlns:local="clr-namespace:PersonaLauncher">
+	<Image Name="image" Source="ペルソナ_立ち絵_背景_通常.png" Opacity="1">
+	<!--<Image.Resources>
+		<ResourceDictionary Source="AnimDic.xaml" />
+	</Image.Resources>-->
+		
+	</Image>
+	<Grid.Resources>
+		<ResourceDictionary Source="AnimDic.xaml" />
+	</Grid.Resources>
+</Grid>

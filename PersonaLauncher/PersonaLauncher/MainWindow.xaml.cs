@@ -9,6 +9,7 @@ using System.Windows.Data;
 using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
+using System.Windows.Media.Animation;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
@@ -31,11 +32,15 @@ namespace PersonaLauncher
 
 		public void Data_Click(object sender, MouseButtonEventArgs e)
 		{
-			////MessageBox.Show("データがクリックされました");
-			//if (sender.GetType() == typeof(DataItem))
-			//{
-			//	((DataItem)sender).Data_Click(e);
-			//}
+			//MessageBox.Show("データがクリックされました");
+			if (sender.GetType() == typeof(DataItem))
+			{
+				DataItem dataItem = (DataItem)sender;
+				
+				dataItem.Animate(dataItem.Name);
+			}
+
+			this.Persona.Animate();
 		}
 
 		//ペルソナをドラッグできるようにする

@@ -15,5 +15,9 @@
 	</Grid.ContextMenu>
 	<Image x:Name="image" Source="{Binding RelativeSource={RelativeSource AncestorType={x:Type Grid}},Path=ImageSource}"
 		   Stretch="{Binding RelativeSource={RelativeSource AncestorType={x:Type Grid}},Path=ImageStretch}" />
-	<TextBlock x:Name="textBlock" Text="{Binding fileOrDirectoryName}" TextAlignment="Center" VerticalAlignment="Center" />
+	<TextBlock x:Name="textBlock" Text="{Binding fileOrDirectoryName}" TextAlignment="Center" VerticalAlignment="Center" TextWrapping="Wrap"/>
+
+	<Grid.Resources>
+		<ResourceDictionary Source="AnimDic.xaml" />
+	</Grid.Resources>
 </Grid>
