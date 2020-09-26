@@ -32,5 +32,18 @@ namespace PersonaLauncher
 			sb.Begin();
 			//this.BeginStoryboard(sb);
 		}
-	}
+
+        public static readonly DependencyProperty Source = DependencyProperty.Register("ImageSourceP", typeof(string), typeof(DataItem));
+        public string ImageSourceP
+        {
+            get { return (string)this.GetValue(Source); }
+            set { this.SetValue(Source, value); }
+        }
+        public static readonly DependencyProperty Stretch = DependencyProperty.Register("ImageStretchP", typeof(string), typeof(DataItem));
+        public string ImageStretchP
+        {
+            get { return (string)this.GetValue(Stretch); }
+            set { this.SetValue(Stretch, value); }
+        }
+    }
 }

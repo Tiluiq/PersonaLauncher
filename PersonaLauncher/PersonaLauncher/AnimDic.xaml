@@ -38,7 +38,16 @@
 									   Duration="0:0:7"
 									   >
 			<DiscreteDoubleKeyFrame KeyTime="0:0:1" Value="600" />
-			<LinearDoubleKeyFrame KeyTime="0:0:3" Value="425" />
+			<EasingDoubleKeyFrame KeyTime="0:0:1.6" Value="650">
+				<EasingDoubleKeyFrame.EasingFunction>
+					<QuadraticEase EasingMode="EaseOut" />
+				</EasingDoubleKeyFrame.EasingFunction>
+			</EasingDoubleKeyFrame>
+			<EasingDoubleKeyFrame KeyTime="0:0:2.4" Value="425">
+				<EasingDoubleKeyFrame.EasingFunction>
+					<QuadraticEase EasingMode="EaseIn" />
+				</EasingDoubleKeyFrame.EasingFunction>
+			</EasingDoubleKeyFrame>
 			<DiscreteDoubleKeyFrame KeyTime="0:0:7" Value="600" />
 		</DoubleAnimationUsingKeyFrames>
 		<DoubleAnimationUsingKeyFrames Storyboard.Target="{Binding ElementName=Data0}"
@@ -46,11 +55,7 @@
 									Duration="0:0:7"
 									>
 			<DiscreteDoubleKeyFrame KeyTime="0:0:1" Value="330" />
-			<EasingDoubleKeyFrame KeyTime="0:0:3" Value="240">
-				<EasingDoubleKeyFrame.EasingFunction>
-					<QuadraticEase EasingMode="EaseOut" />
-				</EasingDoubleKeyFrame.EasingFunction>
-			</EasingDoubleKeyFrame>
+			<LinearDoubleKeyFrame KeyTime="0:0:2.4" Value="240" />
 			<DiscreteDoubleKeyFrame KeyTime="0:0:4" Value="-200" />
 			<!-- 見えないところに移動？ -->
 			<DiscreteDoubleKeyFrame KeyTime="0:0:7" Value="330" />
@@ -64,7 +69,16 @@
 									   Duration="0:0:7"
 									   >
 			<DiscreteDoubleKeyFrame KeyTime="0:0:1" Value="50" />
-			<LinearDoubleKeyFrame KeyTime="0:0:3" Value="425" />
+			<EasingDoubleKeyFrame KeyTime="0:0:2" Value="500">
+				<EasingDoubleKeyFrame.EasingFunction>
+					<QuadraticEase EasingMode="EaseOut" />
+				</EasingDoubleKeyFrame.EasingFunction>
+			</EasingDoubleKeyFrame>
+			<EasingDoubleKeyFrame KeyTime="0:0:2.4" Value="425">
+				<EasingDoubleKeyFrame.EasingFunction>
+					<QuadraticEase EasingMode="EaseIn" />
+				</EasingDoubleKeyFrame.EasingFunction>
+			</EasingDoubleKeyFrame>
 			<DiscreteDoubleKeyFrame KeyTime="0:0:7" Value="50" />
 		</DoubleAnimationUsingKeyFrames>
 		<DoubleAnimationUsingKeyFrames Storyboard.Target="{Binding ElementName=Data1}"
@@ -72,11 +86,7 @@
 									Duration="0:0:7"
 									>
 			<DiscreteDoubleKeyFrame KeyTime="0:0:1" Value="330" />
-			<EasingDoubleKeyFrame KeyTime="0:0:3" Value="240">
-				<EasingDoubleKeyFrame.EasingFunction>
-					<QuadraticEase EasingMode="EaseOut" />
-				</EasingDoubleKeyFrame.EasingFunction>
-			</EasingDoubleKeyFrame>
+			<LinearDoubleKeyFrame KeyTime="0:0:2.4" Value="240" />
 			<DiscreteDoubleKeyFrame KeyTime="0:0:4" Value="-200" />
 			<!-- 見えないところに移動？ -->
 			<DiscreteDoubleKeyFrame KeyTime="0:0:7" Value="330" />
@@ -90,7 +100,16 @@
 									   Duration="0:0:7"
 									   >
 			<DiscreteDoubleKeyFrame KeyTime="0:0:1" Value="600" />
-			<LinearDoubleKeyFrame KeyTime="0:0:3" Value="425" />
+			<EasingDoubleKeyFrame KeyTime="0:0:1.6" Value="650">
+				<EasingDoubleKeyFrame.EasingFunction>
+					<QuadraticEase EasingMode="EaseOut" />
+				</EasingDoubleKeyFrame.EasingFunction>
+			</EasingDoubleKeyFrame>
+			<EasingDoubleKeyFrame KeyTime="0:0:2.4" Value="425">
+				<EasingDoubleKeyFrame.EasingFunction>
+					<QuadraticEase EasingMode="EaseIn" />
+				</EasingDoubleKeyFrame.EasingFunction>
+			</EasingDoubleKeyFrame>
 			<DiscreteDoubleKeyFrame KeyTime="0:0:7" Value="600" />
 		</DoubleAnimationUsingKeyFrames>
 		<DoubleAnimationUsingKeyFrames Storyboard.Target="{Binding ElementName=Data2}"
@@ -98,11 +117,7 @@
 									Duration="0:0:7"
 									>
 			<DiscreteDoubleKeyFrame KeyTime="0:0:1" Value="30" />
-			<EasingDoubleKeyFrame KeyTime="0:0:3" Value="240">
-				<EasingDoubleKeyFrame.EasingFunction>
-					<QuadraticEase EasingMode="EaseOut" />
-				</EasingDoubleKeyFrame.EasingFunction>
-			</EasingDoubleKeyFrame>
+			<LinearDoubleKeyFrame KeyTime="0:0:2.4" Value="240" />
 			<DiscreteDoubleKeyFrame KeyTime="0:0:4" Value="-200" />
 			<!-- 見えないところに移動？ -->
 			<DiscreteDoubleKeyFrame KeyTime="0:0:7" Value="30" />
@@ -116,7 +131,16 @@
 									   Duration="0:0:7"
 									   >
 			<DiscreteDoubleKeyFrame KeyTime="0:0:1" Value="50" />
-			<LinearDoubleKeyFrame KeyTime="0:0:3" Value="425" />
+			<EasingDoubleKeyFrame KeyTime="0:0:2" Value="500">
+				<EasingDoubleKeyFrame.EasingFunction>
+					<QuadraticEase EasingMode="EaseOut" />
+				</EasingDoubleKeyFrame.EasingFunction>
+			</EasingDoubleKeyFrame>
+			<EasingDoubleKeyFrame KeyTime="0:0:2.4" Value="425">
+				<EasingDoubleKeyFrame.EasingFunction>
+					<QuadraticEase EasingMode="EaseIn" />
+				</EasingDoubleKeyFrame.EasingFunction>
+			</EasingDoubleKeyFrame>
 			<DiscreteDoubleKeyFrame KeyTime="0:0:7" Value="50" />
 		</DoubleAnimationUsingKeyFrames>
 		<DoubleAnimationUsingKeyFrames Storyboard.Target="{Binding ElementName=Data3}"
@@ -124,11 +148,7 @@
 									Duration="0:0:7"
 									>
 			<DiscreteDoubleKeyFrame KeyTime="0:0:1" Value="30" />
-			<EasingDoubleKeyFrame KeyTime="0:0:3" Value="240">
-				<EasingDoubleKeyFrame.EasingFunction>
-					<QuadraticEase EasingMode="EaseOut" />
-				</EasingDoubleKeyFrame.EasingFunction>
-			</EasingDoubleKeyFrame>
+			<LinearDoubleKeyFrame KeyTime="0:0:2.4" Value="240" />
 			<DiscreteDoubleKeyFrame KeyTime="0:0:4" Value="-200" />
 			<!-- 見えないところに移動？ -->
 			<DiscreteDoubleKeyFrame KeyTime="0:0:7" Value="30" />

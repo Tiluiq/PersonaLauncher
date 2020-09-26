@@ -33,7 +33,7 @@ namespace PersonaLauncher
 			InitializeComponent();
 			this.DataContext = new
 			{
-				fileOrDirectoryName = "NO DATA"
+				//fileOrDirectoryName = "NO DATA"
 			};
 		}
 
@@ -46,8 +46,8 @@ namespace PersonaLauncher
 		public static readonly DependencyProperty Stretch = DependencyProperty.Register("ImageStretch", typeof(string), typeof(DataItem));
 		public string ImageStretch
 		{
-			get { return (string)this.GetValue(Source); }
-			set { this.SetValue(Source, value); }
+			get { return (string)this.GetValue(Stretch); }
+			set { this.SetValue(Stretch, value); }
 		}
 
 		

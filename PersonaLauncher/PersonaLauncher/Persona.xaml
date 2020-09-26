@@ -4,12 +4,16 @@
 	   xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
 	   xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
 	   xmlns:local="clr-namespace:PersonaLauncher">
-	<Image Name="image" Source="ペルソナ_立ち絵_背景_通常.png" Opacity="1">
-	<!--<Image.Resources>
+    <!--<Image Name="image" Source="ペルソナ_立ち絵_背景_通常.png" Opacity="1">-->
+        <!--<Image.Resources>
 		<ResourceDictionary Source="AnimDic.xaml" />
 	</Image.Resources>-->
-		
-	</Image>
+    <!--
+    <Image Name="image" Source="ペルソナ_立ち絵_トリミング_通常_200926.png" Opacity="1">
+    </Image>
+    -->
+    <Image x:Name="image" Source="{Binding RelativeSource={RelativeSource AncestorType={x:Type Grid}},Path=ImageSourceP}"
+		   Stretch="{Binding RelativeSource={RelativeSource AncestorType={x:Type Grid}},Path=ImageStretchP}" />
 	<Grid.Resources>
 		<ResourceDictionary Source="AnimDic.xaml" />
 	</Grid.Resources>

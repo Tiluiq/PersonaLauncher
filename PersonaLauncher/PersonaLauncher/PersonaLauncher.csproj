@@ -140,5 +140,8 @@
   <ItemGroup>
     <Resource Include="関連付け.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ペルソナ_立ち絵_トリミング_通常_200926.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
