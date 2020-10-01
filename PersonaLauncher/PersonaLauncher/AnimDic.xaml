@@ -43,7 +43,7 @@
 					<QuadraticEase EasingMode="EaseOut" />
 				</EasingDoubleKeyFrame.EasingFunction>
 			</EasingDoubleKeyFrame>
-			<EasingDoubleKeyFrame KeyTime="0:0:2.4" Value="425">
+			<EasingDoubleKeyFrame KeyTime="0:0:2.4" Value="475">
 				<EasingDoubleKeyFrame.EasingFunction>
 					<QuadraticEase EasingMode="EaseIn" />
 				</EasingDoubleKeyFrame.EasingFunction>
@@ -55,12 +55,31 @@
 									Duration="0:0:7"
 									>
 			<DiscreteDoubleKeyFrame KeyTime="0:0:1" Value="330" />
-			<LinearDoubleKeyFrame KeyTime="0:0:2.4" Value="240" />
+			<LinearDoubleKeyFrame KeyTime="0:0:2.4" Value="265" />
 			<DiscreteDoubleKeyFrame KeyTime="0:0:4" Value="-200" />
 			<!-- 見えないところに移動？ -->
 			<DiscreteDoubleKeyFrame KeyTime="0:0:7" Value="330" />
 		</DoubleAnimationUsingKeyFrames>
-	</Storyboard>
+
+        <DoubleAnimationUsingKeyFrames Storyboard.Target="{Binding ElementName=Data0}"
+									Storyboard.TargetProperty="(Canvas.Width)"
+									Duration="0:0:7"
+									>
+            <DiscreteDoubleKeyFrame KeyTime="0:0:1" Value="150" />
+            <LinearDoubleKeyFrame KeyTime="0:0:2.4" Value="100" />
+            <!-- 見えないところに移動？ -->
+            <DiscreteDoubleKeyFrame KeyTime="0:0:7" Value="150" />
+        </DoubleAnimationUsingKeyFrames>
+        <DoubleAnimationUsingKeyFrames Storyboard.Target="{Binding ElementName=Data0}"
+									Storyboard.TargetProperty="(Canvas.Height)"
+									Duration="0:0:7"
+									>
+            <DiscreteDoubleKeyFrame KeyTime="0:0:1" Value="150" />
+            <LinearDoubleKeyFrame KeyTime="0:0:2.4" Value="100" />
+            <!-- 見えないところに移動？ -->
+            <DiscreteDoubleKeyFrame KeyTime="0:0:7" Value="150" />
+        </DoubleAnimationUsingKeyFrames>
+    </Storyboard>
 
 	<Storyboard x:Key="LeftLowerMove">
 		<!-- データの移動 -->
@@ -74,7 +93,7 @@
 					<QuadraticEase EasingMode="EaseOut" />
 				</EasingDoubleKeyFrame.EasingFunction>
 			</EasingDoubleKeyFrame>
-			<EasingDoubleKeyFrame KeyTime="0:0:2.4" Value="425">
+			<EasingDoubleKeyFrame KeyTime="0:0:2.4" Value="475">
 				<EasingDoubleKeyFrame.EasingFunction>
 					<QuadraticEase EasingMode="EaseIn" />
 				</EasingDoubleKeyFrame.EasingFunction>
@@ -86,12 +105,31 @@
 									Duration="0:0:7"
 									>
 			<DiscreteDoubleKeyFrame KeyTime="0:0:1" Value="330" />
-			<LinearDoubleKeyFrame KeyTime="0:0:2.4" Value="240" />
+			<LinearDoubleKeyFrame KeyTime="0:0:2.4" Value="265" />
 			<DiscreteDoubleKeyFrame KeyTime="0:0:4" Value="-200" />
 			<!-- 見えないところに移動？ -->
 			<DiscreteDoubleKeyFrame KeyTime="0:0:7" Value="330" />
 		</DoubleAnimationUsingKeyFrames>
-	</Storyboard>
+
+        <DoubleAnimationUsingKeyFrames Storyboard.Target="{Binding ElementName=Data1}"
+									Storyboard.TargetProperty="(Canvas.Width)"
+									Duration="0:0:7"
+									>
+            <DiscreteDoubleKeyFrame KeyTime="0:0:1" Value="150" />
+            <LinearDoubleKeyFrame KeyTime="0:0:2.4" Value="100" />
+            <!-- 見えないところに移動？ -->
+            <DiscreteDoubleKeyFrame KeyTime="0:0:7" Value="150" />
+        </DoubleAnimationUsingKeyFrames>
+        <DoubleAnimationUsingKeyFrames Storyboard.Target="{Binding ElementName=Data1}"
+									Storyboard.TargetProperty="(Canvas.Height)"
+									Duration="0:0:7"
+									>
+            <DiscreteDoubleKeyFrame KeyTime="0:0:1" Value="150" />
+            <LinearDoubleKeyFrame KeyTime="0:0:2.4" Value="100" />
+            <!-- 見えないところに移動？ -->
+            <DiscreteDoubleKeyFrame KeyTime="0:0:7" Value="150" />
+        </DoubleAnimationUsingKeyFrames>
+    </Storyboard>
 	
 	<Storyboard x:Key="RightUpperMove">
 		<!-- データの移動 -->
@@ -100,29 +138,48 @@
 									   Duration="0:0:7"
 									   >
 			<DiscreteDoubleKeyFrame KeyTime="0:0:1" Value="600" />
-			<EasingDoubleKeyFrame KeyTime="0:0:1.6" Value="650">
+			<EasingDoubleKeyFrame KeyTime="0:0:1.6" Value="675">
 				<EasingDoubleKeyFrame.EasingFunction>
 					<QuadraticEase EasingMode="EaseOut" />
 				</EasingDoubleKeyFrame.EasingFunction>
 			</EasingDoubleKeyFrame>
-			<EasingDoubleKeyFrame KeyTime="0:0:2.4" Value="425">
+			<EasingDoubleKeyFrame KeyTime="0:0:2.4" Value="475">
 				<EasingDoubleKeyFrame.EasingFunction>
 					<QuadraticEase EasingMode="EaseIn" />
 				</EasingDoubleKeyFrame.EasingFunction>
 			</EasingDoubleKeyFrame>
 			<DiscreteDoubleKeyFrame KeyTime="0:0:7" Value="600" />
 		</DoubleAnimationUsingKeyFrames>
-		<DoubleAnimationUsingKeyFrames Storyboard.Target="{Binding ElementName=Data2}"
+        <DoubleAnimationUsingKeyFrames Storyboard.Target="{Binding ElementName=Data2}"
 									Storyboard.TargetProperty="(Canvas.Top)"
 									Duration="0:0:7"
 									>
-			<DiscreteDoubleKeyFrame KeyTime="0:0:1" Value="30" />
-			<LinearDoubleKeyFrame KeyTime="0:0:2.4" Value="240" />
-			<DiscreteDoubleKeyFrame KeyTime="0:0:4" Value="-200" />
-			<!-- 見えないところに移動？ -->
-			<DiscreteDoubleKeyFrame KeyTime="0:0:7" Value="30" />
-		</DoubleAnimationUsingKeyFrames>
-	</Storyboard>
+            <DiscreteDoubleKeyFrame KeyTime="0:0:1" Value="30" />
+            <LinearDoubleKeyFrame KeyTime="0:0:2.4" Value="265" />
+            <DiscreteDoubleKeyFrame KeyTime="0:0:4" Value="-200" />
+            <!-- 見えないところに移動？ -->
+            <DiscreteDoubleKeyFrame KeyTime="0:0:7" Value="30" />
+        </DoubleAnimationUsingKeyFrames>
+
+        <DoubleAnimationUsingKeyFrames Storyboard.Target="{Binding ElementName=Data2}"
+									Storyboard.TargetProperty="(Canvas.Width)"
+									Duration="0:0:7"
+									>
+            <DiscreteDoubleKeyFrame KeyTime="0:0:1" Value="150" />
+            <LinearDoubleKeyFrame KeyTime="0:0:2.4" Value="100" />
+            <!-- 見えないところに移動？ -->
+            <DiscreteDoubleKeyFrame KeyTime="0:0:7" Value="150" />
+        </DoubleAnimationUsingKeyFrames>
+        <DoubleAnimationUsingKeyFrames Storyboard.Target="{Binding ElementName=Data2}"
+									Storyboard.TargetProperty="(Canvas.Height)"
+									Duration="0:0:7"
+									>
+            <DiscreteDoubleKeyFrame KeyTime="0:0:1" Value="150" />
+            <LinearDoubleKeyFrame KeyTime="0:0:2.4" Value="100" />
+            <!-- 見えないところに移動？ -->
+            <DiscreteDoubleKeyFrame KeyTime="0:0:7" Value="150" />
+        </DoubleAnimationUsingKeyFrames>
+    </Storyboard>
 
 	<Storyboard x:Key="LeftUpperMove">
 		<!-- データの移動 -->
@@ -136,7 +193,7 @@
 					<QuadraticEase EasingMode="EaseOut" />
 				</EasingDoubleKeyFrame.EasingFunction>
 			</EasingDoubleKeyFrame>
-			<EasingDoubleKeyFrame KeyTime="0:0:2.4" Value="425">
+			<EasingDoubleKeyFrame KeyTime="0:0:2.4" Value="475">
 				<EasingDoubleKeyFrame.EasingFunction>
 					<QuadraticEase EasingMode="EaseIn" />
 				</EasingDoubleKeyFrame.EasingFunction>
@@ -148,10 +205,29 @@
 									Duration="0:0:7"
 									>
 			<DiscreteDoubleKeyFrame KeyTime="0:0:1" Value="30" />
-			<LinearDoubleKeyFrame KeyTime="0:0:2.4" Value="240" />
+			<LinearDoubleKeyFrame KeyTime="0:0:2.4" Value="265" />
 			<DiscreteDoubleKeyFrame KeyTime="0:0:4" Value="-200" />
 			<!-- 見えないところに移動？ -->
 			<DiscreteDoubleKeyFrame KeyTime="0:0:7" Value="30" />
 		</DoubleAnimationUsingKeyFrames>
-	</Storyboard>
+
+        <DoubleAnimationUsingKeyFrames Storyboard.Target="{Binding ElementName=Data3}"
+									Storyboard.TargetProperty="(Canvas.Width)"
+									Duration="0:0:7"
+									>
+            <DiscreteDoubleKeyFrame KeyTime="0:0:1" Value="150" />
+            <LinearDoubleKeyFrame KeyTime="0:0:2.4" Value="100" />
+            <!-- 見えないところに移動？ -->
+            <DiscreteDoubleKeyFrame KeyTime="0:0:7" Value="150" />
+        </DoubleAnimationUsingKeyFrames>
+        <DoubleAnimationUsingKeyFrames Storyboard.Target="{Binding ElementName=Data3}"
+									Storyboard.TargetProperty="(Canvas.Height)"
+									Duration="0:0:7"
+									>
+            <DiscreteDoubleKeyFrame KeyTime="0:0:1" Value="150" />
+            <LinearDoubleKeyFrame KeyTime="0:0:2.4" Value="100" />
+            <!-- 見えないところに移動？ -->
+            <DiscreteDoubleKeyFrame KeyTime="0:0:7" Value="150" />
+        </DoubleAnimationUsingKeyFrames>
+    </Storyboard>
 </ResourceDictionary>

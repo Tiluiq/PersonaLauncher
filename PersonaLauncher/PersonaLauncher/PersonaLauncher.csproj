@@ -129,7 +129,6 @@
     <Resource Include="ファイル.png" />
     <Resource Include="ペルソナ_立ち絵_背景_キャッチ.png" />
     <Resource Include="ペルソナ_立ち絵_背景_解放.png" />
-    <Resource Include="ペルソナ_立ち絵_背景_通常.png" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="テキスト1.png" />
@@ -141,7 +140,7 @@
     <Resource Include="関連付け.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="ペルソナ_立ち絵_トリミング_通常_200926.png" />
+    <Resource Include="ペルソナ_立ち絵_背景_通常.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
