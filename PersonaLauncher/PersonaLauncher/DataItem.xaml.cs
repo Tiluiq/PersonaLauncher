@@ -26,7 +26,7 @@ namespace PersonaLauncher
 	{
 		string filePath = "";
 		string directoryPath = "";
-
+        string defaultX, defaultY;
 
 		public DataItem()
 		{
@@ -35,7 +35,7 @@ namespace PersonaLauncher
 			{
 				//fileOrDirectoryName = "NO DATA"
 			};
-		}
+        }
 
 		public static readonly DependencyProperty Source = DependencyProperty.Register("ImageSource", typeof(string), typeof(DataItem));
 		public string ImageSource
@@ -50,9 +50,22 @@ namespace PersonaLauncher
 			set { this.SetValue(Stretch, value); }
 		}
 
-		
+        public static readonly DependencyProperty translateX = DependencyProperty.Register("TranslateX", typeof(string), typeof(DataItem));
+        public string TranslateX
+        {
+            get { return (string)this.GetValue(translateX); }
+            set { this.SetValue(translateX, value); }
+        }
+        public static readonly DependencyProperty translateY = DependencyProperty.Register("TranslateY", typeof(string), typeof(DataItem));
+        public string TranslateY
+        {
+            get { return (string)this.GetValue(translateY); }
+            set { this.SetValue(translateY, value); }
+        }
 
-		private void FileSelect(object sender, RoutedEventArgs e)
+
+
+        private void FileSelect(object sender, RoutedEventArgs e)
 		{
 			OpenFileDialog openFileDialog = new OpenFileDialog();
 
@@ -86,46 +99,100 @@ namespace PersonaLauncher
 			
 		}
 
-		public void Animate(string dataName)
-		{
-			Storyboard sb = null;
-			switch (dataName)
-			{
-				case "Data0":
-					sb = FindResource("RightLowerMove") as Storyboard;
-					goto default;
-				case "Data1":
-					sb = FindResource("LeftLowerMove") as Storyboard;
-					goto default;
-				case "Data2":
-					sb = FindResource("RightUpperMove") as Storyboard;
-					goto default;
-				case "Data3":
-					sb = FindResource("LeftUpperMove") as Storyboard;
-					goto default;
-				default:
-					sb.Begin();
-					break;
-			}
-			
-			//this.BeginStoryboard(sb);
-		}
+        public void Animate(DataItem data)
+        {
+            defaultX = TranslateX;
+            defaultY = TranslateY;
 
-		//画像サイズに合わせたフォントサイズを取得
-		//private int FontSize(string str, System.Drawing.Size size)
-		//{
-		//	double height, width;
+            Storyboard sbParent = new Storyboard();
+            Storyboard sb = null;
+            string dataName = data.Name;
+            //移動前半
+            switch (dataName)
+            {
+                case "Data0":
+                    sb = FindResource("RightLowerMoveBegin") as Storyboard;
+                    goto default;
+                case "Data1":
+                    sb = FindResource("LeftLowerMoveBegin") as Storyboard;
+                    goto default;
+                case "Data2":
+                    sb = FindResource("RightUpperMoveBegin") as Storyboard;
+                    goto default;
+                case "Data3":
+                    sb = FindResource("LeftUpperMoveBegin") as Storyboard;
+                    goto default;
+                default:
+                    //sb.Completed += ResetTranslate;
+                    //sb.Begin();
+                    sbParent.Children.Add(sb);
+                    break;
+            }
 
-		//	using (Font f = new Font(System.Windows.Forms.Control.DefaultFont.Name, 1))
-		//	{
-		//		height = this.image.Height;
-		//		width = this.image.Width;
+            //キャッチ時の縮小
+            sb = FindResource("ShrinkForCatch") as Storyboard;
+            if (sb != null)
+            {
+                Storyboard.SetTarget(sb, data);
+                sbParent.Children.Add(sb);
+            }
 
-		//		int heightSize = (int)(size.Height / height);
-		//		int widthSize = (int)(size.Width / width);
+            //投げ動作
+            sb = FindResource("DataThrown") as Storyboard;
+            if (sb != null)
+            {
+                Storyboard.SetTarget(sb, data);
+                sbParent.Children.Add(sb);
+            }
+
+            //移動後半(元の位置に戻すことを想定)
+            switch (dataName)
+            {
+                case "Data0":
+                    sb = FindResource("RightLowerMoveEnd") as Storyboard;
+                    goto default;
+                case "Data1":
+                    sb = FindResource("LeftLowerMoveEnd") as Storyboard;
+                    goto default;
+                case "Data2":
+                    sb = FindResource("RightUpperMoveEnd") as Storyboard;
+                    goto default;
+                case "Data3":
+                    sb = FindResource("LeftUpperMoveEnd") as Storyboard;
+                    goto default;
+                default:
+                    sbParent.Children.Add(sb);
+                    break;
+            }
+
+            //sbParent.Completed += ResetTranslate;
+            sbParent.Begin();
+        }
+
+        private void ResetTranslate(object sender, EventArgs e)
+        {
+            TranslateX = defaultX;
+            //TranslateY = defaultY;
+            int x = int.Parse(defaultX);
+            this.translate.X = int.Parse(defaultX);
+            this.translate.Y = int.Parse(defaultY);
+        }
+
+        //画像サイズに合わせたフォントサイズを取得
+        //private int FontSize(string str, System.Drawing.Size size)
+        //{
+        //	double height, width;
+
+        //	using (Font f = new Font(System.Windows.Forms.Control.DefaultFont.Name, 1))
+        //	{
+        //		height = this.image.Height;
+        //		width = this.image.Width;
+
+        //		int heightSize = (int)(size.Height / height);
+        //		int widthSize = (int)(size.Width / width);
 
 
-		//	}
-		//}
-	}
+        //	}
+        //}
+    }
 }

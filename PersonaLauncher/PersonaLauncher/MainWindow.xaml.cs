@@ -36,11 +36,12 @@ namespace PersonaLauncher
 			if (sender.GetType() == typeof(DataItem))
 			{
 				DataItem dataItem = (DataItem)sender;
-				
-				dataItem.Animate(dataItem.Name);
-			}
 
-			this.Persona.Animate();
+                //dataItem.Animate(dataItem.Name);
+                dataItem.Animate(dataItem);
+            }
+
+            this.Persona.Animate();
 		}
 
 		//ペルソナをドラッグできるようにする

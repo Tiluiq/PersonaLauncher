@@ -17,7 +17,24 @@
 		   Stretch="{Binding RelativeSource={RelativeSource AncestorType={x:Type Grid}},Path=ImageStretch}" />
 	<TextBlock x:Name="textBlock" Text="{Binding fileOrDirectoryName}" TextAlignment="Center" VerticalAlignment="Center" TextWrapping="Wrap"/>
 
-	<Grid.Resources>
+    <!-- 拡大縮小・回転の中心を中央に設定 -->
+    <Grid.RenderTransformOrigin>
+        <Point X="0.5" Y="0.5" />
+    </Grid.RenderTransformOrigin>
+
+    <Grid.RenderTransform>
+        <TransformGroup>
+            <ScaleTransform ScaleX="1" ScaleY="1" />
+            <TranslateTransform x:Name="translate"
+                                X="{Binding RelativeSource={RelativeSource AncestorType={x:Type Grid}},Path=TranslateX}"
+                                Y="{Binding RelativeSource={RelativeSource AncestorType={x:Type Grid}},Path=TranslateY}"/>
+        </TransformGroup>
+    </Grid.RenderTransform>
+    
+
+    
+    
+    <Grid.Resources>
 		<ResourceDictionary Source="AnimDic.xaml" />
 	</Grid.Resources>
 </Grid>

@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PersonaLauncher"
         mc:Ignorable="d"
-        Title="Persona Launcher ver 0.0.7" Height="600" Width="800"
+        Title="Persona Launcher ver 0.0.8" Height="600" Width="800"
 		
 		WindowStyle="SingleBorderWindow"
 		
@@ -16,13 +16,11 @@
     <Canvas>
 
         <!---->
-		<local:Persona x:Name="Persona" ImageSourceP="ペルソナ_立ち絵_背景_通常.png" ImageStretchP="Uniform" Opacity="1" Height="691" Width="794"/>
+		<local:Persona x:Name="Persona" ImageSourceP="ペルソナ_立ち絵_通常.png" ImageStretchP="Uniform" Opacity="1" Height="691" Width="794"/>
 		
-		<local:DataItem x:Name="Data0" ImageSource="ファイル.png" Opacity="1" ImageStretch="Fill" Height="150" Width="150" Canvas.Left="600" Canvas.Top="330" MouseLeftButtonUp="Data_Click" />
-		<local:DataItem x:Name="Data1" ImageSource="ファイル.png" Opacity="1" ImageStretch="Fill" Height="150" Width="150" Canvas.Left="50"  Canvas.Top="330" MouseLeftButtonUp="Data_Click" />
-		<local:DataItem x:Name="Data2" ImageSource="ファイル.png" Opacity="1" ImageStretch="Fill" Height="150" Width="150" Canvas.Left="600" Canvas.Top="30"  MouseLeftButtonUp="Data_Click" />
-		<local:DataItem x:Name="Data3" ImageSource="ファイル.png" Opacity="1" ImageStretch="Fill" Height="150" Width="150" Canvas.Left="50"  Canvas.Top="30"  MouseLeftButtonUp="Data_Click" />
-
-
+		<local:DataItem x:Name="Data0" ImageSource="ファイル.png" Opacity="1" ImageStretch="Fill" Height="150" Width="150" TranslateX="600" TranslateY="330" MouseLeftButtonUp="Data_Click" />
+		<local:DataItem x:Name="Data1" ImageSource="ファイル.png" Opacity="1" ImageStretch="Fill" Height="150" Width="150" TranslateX="50"  TranslateY="330" MouseLeftButtonUp="Data_Click" />
+		<local:DataItem x:Name="Data2" ImageSource="ファイル.png" Opacity="1" ImageStretch="Fill" Height="150" Width="150" TranslateX="600" TranslateY="30"  MouseLeftButtonUp="Data_Click" />
+		<local:DataItem x:Name="Data3" ImageSource="ファイル.png" Opacity="1" ImageStretch="Fill" Height="150" Width="150" TranslateX="50"  TranslateY="30"  MouseLeftButtonUp="Data_Click" />
 	</Canvas>
 </Window>

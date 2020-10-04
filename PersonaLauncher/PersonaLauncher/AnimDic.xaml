@@ -10,182 +10,164 @@
 									   Duration="0:0:7">
 			<DiscreteObjectKeyFrame KeyTime="0:0:0">
 				<DiscreteObjectKeyFrame.Value>
-					<BitmapImage UriSource="ペルソナ_立ち絵_背景_通常.png" />
+					<BitmapImage UriSource="ペルソナ_立ち絵_通常.png" />
 				</DiscreteObjectKeyFrame.Value>
 			</DiscreteObjectKeyFrame>
 			<DiscreteObjectKeyFrame KeyTime="0:0:1">
 				<DiscreteObjectKeyFrame.Value>
-					<BitmapImage UriSource="ペルソナ_立ち絵_背景_キャッチ.png" />
+					<BitmapImage UriSource="ペルソナ_立ち絵_キャッチ.png" />
 				</DiscreteObjectKeyFrame.Value>
 			</DiscreteObjectKeyFrame>
 			<DiscreteObjectKeyFrame KeyTime="0:0:4">
 				<DiscreteObjectKeyFrame.Value>
-					<BitmapImage UriSource="ペルソナ_立ち絵_背景_解放.png" />
+					<BitmapImage UriSource="ペルソナ_立ち絵_投げ.png" />
 				</DiscreteObjectKeyFrame.Value>
 			</DiscreteObjectKeyFrame>
 			<DiscreteObjectKeyFrame KeyTime="0:0:7">
 				<DiscreteObjectKeyFrame.Value>
-					<BitmapImage UriSource="ペルソナ_立ち絵_背景_通常.png" />
+					<BitmapImage UriSource="ペルソナ_立ち絵_通常.png" />
 				</DiscreteObjectKeyFrame.Value>
 			</DiscreteObjectKeyFrame>
 		</ObjectAnimationUsingKeyFrames>
 	</Storyboard>
 
-	<Storyboard x:Key="RightLowerMove">
-		<!-- データの移動 -->
-		<DoubleAnimationUsingKeyFrames Storyboard.Target="{Binding ElementName=Data0}"
-									   Storyboard.TargetProperty="(Canvas.Left)"
-									   Duration="0:0:7"
-									   >
-			<DiscreteDoubleKeyFrame KeyTime="0:0:1" Value="600" />
-			<EasingDoubleKeyFrame KeyTime="0:0:1.6" Value="650">
-				<EasingDoubleKeyFrame.EasingFunction>
-					<QuadraticEase EasingMode="EaseOut" />
-				</EasingDoubleKeyFrame.EasingFunction>
-			</EasingDoubleKeyFrame>
-			<EasingDoubleKeyFrame KeyTime="0:0:2.4" Value="475">
-				<EasingDoubleKeyFrame.EasingFunction>
-					<QuadraticEase EasingMode="EaseIn" />
-				</EasingDoubleKeyFrame.EasingFunction>
-			</EasingDoubleKeyFrame>
-			<DiscreteDoubleKeyFrame KeyTime="0:0:7" Value="600" />
-		</DoubleAnimationUsingKeyFrames>
-		<DoubleAnimationUsingKeyFrames Storyboard.Target="{Binding ElementName=Data0}"
-									Storyboard.TargetProperty="(Canvas.Top)"
-									Duration="0:0:7"
-									>
-			<DiscreteDoubleKeyFrame KeyTime="0:0:1" Value="330" />
-			<LinearDoubleKeyFrame KeyTime="0:0:2.4" Value="265" />
-			<DiscreteDoubleKeyFrame KeyTime="0:0:4" Value="-200" />
-			<!-- 見えないところに移動？ -->
-			<DiscreteDoubleKeyFrame KeyTime="0:0:7" Value="330" />
-		</DoubleAnimationUsingKeyFrames>
-
+    <Storyboard x:Key="RightLowerMoveBegin">
+        <!-- データの移動 -->
         <DoubleAnimationUsingKeyFrames Storyboard.Target="{Binding ElementName=Data0}"
-									Storyboard.TargetProperty="(Canvas.Width)"
-									Duration="0:0:7"
-									>
-            <DiscreteDoubleKeyFrame KeyTime="0:0:1" Value="150" />
-            <LinearDoubleKeyFrame KeyTime="0:0:2.4" Value="100" />
-            <!-- 見えないところに移動？ -->
-            <DiscreteDoubleKeyFrame KeyTime="0:0:7" Value="150" />
+									   Storyboard.TargetProperty="(Grid.RenderTransform).(TransformGroup.Children)[1].(TranslateTransform.X)"
+									   Duration="0:0:2.4"
+									   >
+            <DiscreteDoubleKeyFrame KeyTime="0:0:1" Value="600" />
+            <EasingDoubleKeyFrame KeyTime="0:0:1.6" Value="675">
+                <EasingDoubleKeyFrame.EasingFunction>
+                    <QuadraticEase EasingMode="EaseOut" />
+                </EasingDoubleKeyFrame.EasingFunction>
+            </EasingDoubleKeyFrame>
+            <EasingDoubleKeyFrame KeyTime="0:0:2.4" Value="450">
+                <EasingDoubleKeyFrame.EasingFunction>
+                    <QuadraticEase EasingMode="EaseIn" />
+                </EasingDoubleKeyFrame.EasingFunction>
+            </EasingDoubleKeyFrame>
         </DoubleAnimationUsingKeyFrames>
         <DoubleAnimationUsingKeyFrames Storyboard.Target="{Binding ElementName=Data0}"
-									Storyboard.TargetProperty="(Canvas.Height)"
-									Duration="0:0:7"
-									>
-            <DiscreteDoubleKeyFrame KeyTime="0:0:1" Value="150" />
-            <LinearDoubleKeyFrame KeyTime="0:0:2.4" Value="100" />
-            <!-- 見えないところに移動？ -->
-            <DiscreteDoubleKeyFrame KeyTime="0:0:7" Value="150" />
+                                       Storyboard.TargetProperty="(Grid.RenderTransform).(TransformGroup.Children)[1].(TranslateTransform.Y)"
+                                       Duration="0:0:2.4"
+                                       >
+            <DiscreteDoubleKeyFrame KeyTime="0:0:1" Value="330" />
+            <LinearDoubleKeyFrame KeyTime="0:0:2.4" Value="240" />
+        </DoubleAnimationUsingKeyFrames>
+    </Storyboard>
+    <Storyboard x:Key="RightLowerMoveEnd">
+        <DoubleAnimationUsingKeyFrames Storyboard.Target="{Binding ElementName=Data0}"
+									   Storyboard.TargetProperty="(Grid.RenderTransform).(TransformGroup.Children)[1].(TranslateTransform.X)"
+                                       BeginTime="0:0:7"
+									   Duration="0:0:0"
+									   >
+            <DiscreteDoubleKeyFrame KeyTime="0:0:0" Value="600" />
+        </DoubleAnimationUsingKeyFrames>
+
+        <DoubleAnimationUsingKeyFrames Storyboard.Target="{Binding ElementName=Data0}"
+                                       Storyboard.TargetProperty="(Grid.RenderTransform).(TransformGroup.Children)[1].(TranslateTransform.Y)"
+                                       BeginTime="0:0:7"
+                                       Duration="0:0:0"
+                                       >
+            <DiscreteDoubleKeyFrame KeyTime="0:0:0" Value="330" />
+        </DoubleAnimationUsingKeyFrames>
+    </Storyboard>
+    
+    <Storyboard x:Key="LeftLowerMoveBegin">
+        <!-- データの移動 -->
+        <DoubleAnimationUsingKeyFrames Storyboard.Target="{Binding ElementName=Data1}"
+									   Storyboard.TargetProperty="(Grid.RenderTransform).(TransformGroup.Children)[1].(TranslateTransform.X)"
+									   Duration="0:0:2.4"
+									   >
+            <DiscreteDoubleKeyFrame KeyTime="0:0:1" Value="50" />
+            <EasingDoubleKeyFrame KeyTime="0:0:2" Value="500">
+                <EasingDoubleKeyFrame.EasingFunction>
+                    <QuadraticEase EasingMode="EaseOut" />
+                </EasingDoubleKeyFrame.EasingFunction>
+            </EasingDoubleKeyFrame>
+            <EasingDoubleKeyFrame KeyTime="0:0:2.4" Value="450">
+                <EasingDoubleKeyFrame.EasingFunction>
+                    <QuadraticEase EasingMode="EaseIn" />
+                </EasingDoubleKeyFrame.EasingFunction>
+            </EasingDoubleKeyFrame>
+        </DoubleAnimationUsingKeyFrames>
+        <DoubleAnimationUsingKeyFrames Storyboard.Target="{Binding ElementName=Data1}"
+                                       Storyboard.TargetProperty="(Grid.RenderTransform).(TransformGroup.Children)[1].(TranslateTransform.Y)"
+                                       Duration="0:0:2.4"
+                                       >
+            <DiscreteDoubleKeyFrame KeyTime="0:0:1" Value="330" />
+            <LinearDoubleKeyFrame KeyTime="0:0:2.4" Value="240" />
+        </DoubleAnimationUsingKeyFrames>
+    </Storyboard>
+    <Storyboard x:Key="LeftLowerMoveEnd">
+        <DoubleAnimationUsingKeyFrames Storyboard.Target="{Binding ElementName=Data1}"
+									   Storyboard.TargetProperty="(Grid.RenderTransform).(TransformGroup.Children)[1].(TranslateTransform.X)"
+                                       BeginTime="0:0:7"
+									   Duration="0:0:0"
+									   >
+            <DiscreteDoubleKeyFrame KeyTime="0:0:0" Value="50" />
+        </DoubleAnimationUsingKeyFrames>
+
+        <DoubleAnimationUsingKeyFrames Storyboard.Target="{Binding ElementName=Data1}"
+                                       Storyboard.TargetProperty="(Grid.RenderTransform).(TransformGroup.Children)[1].(TranslateTransform.Y)"
+                                       BeginTime="0:0:7"
+                                       Duration="0:0:0"
+                                       >
+            <DiscreteDoubleKeyFrame KeyTime="0:0:0" Value="330" />
         </DoubleAnimationUsingKeyFrames>
     </Storyboard>
 
-	<Storyboard x:Key="LeftLowerMove">
-		<!-- データの移動 -->
-		<DoubleAnimationUsingKeyFrames Storyboard.Target="{Binding ElementName=Data1}"
-									   Storyboard.TargetProperty="(Canvas.Left)"
-									   Duration="0:0:7"
-									   >
-			<DiscreteDoubleKeyFrame KeyTime="0:0:1" Value="50" />
-			<EasingDoubleKeyFrame KeyTime="0:0:2" Value="500">
-				<EasingDoubleKeyFrame.EasingFunction>
-					<QuadraticEase EasingMode="EaseOut" />
-				</EasingDoubleKeyFrame.EasingFunction>
-			</EasingDoubleKeyFrame>
-			<EasingDoubleKeyFrame KeyTime="0:0:2.4" Value="475">
-				<EasingDoubleKeyFrame.EasingFunction>
-					<QuadraticEase EasingMode="EaseIn" />
-				</EasingDoubleKeyFrame.EasingFunction>
-			</EasingDoubleKeyFrame>
-			<DiscreteDoubleKeyFrame KeyTime="0:0:7" Value="50" />
-		</DoubleAnimationUsingKeyFrames>
-		<DoubleAnimationUsingKeyFrames Storyboard.Target="{Binding ElementName=Data1}"
-									Storyboard.TargetProperty="(Canvas.Top)"
-									Duration="0:0:7"
-									>
-			<DiscreteDoubleKeyFrame KeyTime="0:0:1" Value="330" />
-			<LinearDoubleKeyFrame KeyTime="0:0:2.4" Value="265" />
-			<DiscreteDoubleKeyFrame KeyTime="0:0:4" Value="-200" />
-			<!-- 見えないところに移動？ -->
-			<DiscreteDoubleKeyFrame KeyTime="0:0:7" Value="330" />
-		</DoubleAnimationUsingKeyFrames>
-
-        <DoubleAnimationUsingKeyFrames Storyboard.Target="{Binding ElementName=Data1}"
-									Storyboard.TargetProperty="(Canvas.Width)"
-									Duration="0:0:7"
-									>
-            <DiscreteDoubleKeyFrame KeyTime="0:0:1" Value="150" />
-            <LinearDoubleKeyFrame KeyTime="0:0:2.4" Value="100" />
-            <!-- 見えないところに移動？ -->
-            <DiscreteDoubleKeyFrame KeyTime="0:0:7" Value="150" />
-        </DoubleAnimationUsingKeyFrames>
-        <DoubleAnimationUsingKeyFrames Storyboard.Target="{Binding ElementName=Data1}"
-									Storyboard.TargetProperty="(Canvas.Height)"
-									Duration="0:0:7"
-									>
-            <DiscreteDoubleKeyFrame KeyTime="0:0:1" Value="150" />
-            <LinearDoubleKeyFrame KeyTime="0:0:2.4" Value="100" />
-            <!-- 見えないところに移動？ -->
-            <DiscreteDoubleKeyFrame KeyTime="0:0:7" Value="150" />
-        </DoubleAnimationUsingKeyFrames>
-    </Storyboard>
-	
-	<Storyboard x:Key="RightUpperMove">
-		<!-- データの移動 -->
-		<DoubleAnimationUsingKeyFrames Storyboard.Target="{Binding ElementName=Data2}"
-									   Storyboard.TargetProperty="(Canvas.Left)"
-									   Duration="0:0:7"
-									   >
-			<DiscreteDoubleKeyFrame KeyTime="0:0:1" Value="600" />
-			<EasingDoubleKeyFrame KeyTime="0:0:1.6" Value="675">
-				<EasingDoubleKeyFrame.EasingFunction>
-					<QuadraticEase EasingMode="EaseOut" />
-				</EasingDoubleKeyFrame.EasingFunction>
-			</EasingDoubleKeyFrame>
-			<EasingDoubleKeyFrame KeyTime="0:0:2.4" Value="475">
-				<EasingDoubleKeyFrame.EasingFunction>
-					<QuadraticEase EasingMode="EaseIn" />
-				</EasingDoubleKeyFrame.EasingFunction>
-			</EasingDoubleKeyFrame>
-			<DiscreteDoubleKeyFrame KeyTime="0:0:7" Value="600" />
-		</DoubleAnimationUsingKeyFrames>
+    <Storyboard x:Key="RightUpperMoveBegin">
+        <!-- データの移動 -->
         <DoubleAnimationUsingKeyFrames Storyboard.Target="{Binding ElementName=Data2}"
-									Storyboard.TargetProperty="(Canvas.Top)"
-									Duration="0:0:7"
-									>
+									   Storyboard.TargetProperty="(Grid.RenderTransform).(TransformGroup.Children)[1].(TranslateTransform.X)"
+									   Duration="0:0:2.4"
+									   >
+            <DiscreteDoubleKeyFrame KeyTime="0:0:1" Value="600" />
+            <EasingDoubleKeyFrame KeyTime="0:0:1.6" Value="675">
+                <EasingDoubleKeyFrame.EasingFunction>
+                    <QuadraticEase EasingMode="EaseOut" />
+                </EasingDoubleKeyFrame.EasingFunction>
+            </EasingDoubleKeyFrame>
+            <EasingDoubleKeyFrame KeyTime="0:0:2.4" Value="450">
+                <EasingDoubleKeyFrame.EasingFunction>
+                    <QuadraticEase EasingMode="EaseIn" />
+                </EasingDoubleKeyFrame.EasingFunction>
+            </EasingDoubleKeyFrame>
+        </DoubleAnimationUsingKeyFrames>
+        <DoubleAnimationUsingKeyFrames Storyboard.Target="{Binding ElementName=Data2}"
+                                       Storyboard.TargetProperty="(Grid.RenderTransform).(TransformGroup.Children)[1].(TranslateTransform.Y)"
+                                       Duration="0:0:2.4"
+                                       >
             <DiscreteDoubleKeyFrame KeyTime="0:0:1" Value="30" />
-            <LinearDoubleKeyFrame KeyTime="0:0:2.4" Value="265" />
-            <DiscreteDoubleKeyFrame KeyTime="0:0:4" Value="-200" />
-            <!-- 見えないところに移動？ -->
-            <DiscreteDoubleKeyFrame KeyTime="0:0:7" Value="30" />
+            <LinearDoubleKeyFrame KeyTime="0:0:2.4" Value="240" />
+        </DoubleAnimationUsingKeyFrames>
+    </Storyboard>
+    <Storyboard x:Key="RightUpperMoveEnd">
+        <DoubleAnimationUsingKeyFrames Storyboard.Target="{Binding ElementName=Data2}"
+									   Storyboard.TargetProperty="(Grid.RenderTransform).(TransformGroup.Children)[1].(TranslateTransform.X)"
+                                       BeginTime="0:0:7"
+									   Duration="0:0:0"
+									   >
+            <DiscreteDoubleKeyFrame KeyTime="0:0:0" Value="600" />
         </DoubleAnimationUsingKeyFrames>
 
         <DoubleAnimationUsingKeyFrames Storyboard.Target="{Binding ElementName=Data2}"
-									Storyboard.TargetProperty="(Canvas.Width)"
-									Duration="0:0:7"
-									>
-            <DiscreteDoubleKeyFrame KeyTime="0:0:1" Value="150" />
-            <LinearDoubleKeyFrame KeyTime="0:0:2.4" Value="100" />
-            <!-- 見えないところに移動？ -->
-            <DiscreteDoubleKeyFrame KeyTime="0:0:7" Value="150" />
-        </DoubleAnimationUsingKeyFrames>
-        <DoubleAnimationUsingKeyFrames Storyboard.Target="{Binding ElementName=Data2}"
-									Storyboard.TargetProperty="(Canvas.Height)"
-									Duration="0:0:7"
-									>
-            <DiscreteDoubleKeyFrame KeyTime="0:0:1" Value="150" />
-            <LinearDoubleKeyFrame KeyTime="0:0:2.4" Value="100" />
-            <!-- 見えないところに移動？ -->
-            <DiscreteDoubleKeyFrame KeyTime="0:0:7" Value="150" />
+                                       Storyboard.TargetProperty="(Grid.RenderTransform).(TransformGroup.Children)[1].(TranslateTransform.Y)"
+                                       BeginTime="0:0:7"
+                                       Duration="0:0:0"
+                                       >
+            <DiscreteDoubleKeyFrame KeyTime="0:0:0" Value="30" />
         </DoubleAnimationUsingKeyFrames>
     </Storyboard>
 
-	<Storyboard x:Key="LeftUpperMove">
+    <Storyboard x:Key="LeftUpperMoveBegin">
 		<!-- データの移動 -->
 		<DoubleAnimationUsingKeyFrames Storyboard.Target="{Binding ElementName=Data3}"
-									   Storyboard.TargetProperty="(Canvas.Left)"
-									   Duration="0:0:7"
+									   Storyboard.TargetProperty="(Grid.RenderTransform).(TransformGroup.Children)[1].(TranslateTransform.X)"
+									   Duration="0:0:2.4"
 									   >
 			<DiscreteDoubleKeyFrame KeyTime="0:0:1" Value="50" />
 			<EasingDoubleKeyFrame KeyTime="0:0:2" Value="500">
@@ -193,41 +175,89 @@
 					<QuadraticEase EasingMode="EaseOut" />
 				</EasingDoubleKeyFrame.EasingFunction>
 			</EasingDoubleKeyFrame>
-			<EasingDoubleKeyFrame KeyTime="0:0:2.4" Value="475">
+			<EasingDoubleKeyFrame KeyTime="0:0:2.4" Value="450">
 				<EasingDoubleKeyFrame.EasingFunction>
 					<QuadraticEase EasingMode="EaseIn" />
 				</EasingDoubleKeyFrame.EasingFunction>
 			</EasingDoubleKeyFrame>
-			<DiscreteDoubleKeyFrame KeyTime="0:0:7" Value="50" />
 		</DoubleAnimationUsingKeyFrames>
 		<DoubleAnimationUsingKeyFrames Storyboard.Target="{Binding ElementName=Data3}"
-									Storyboard.TargetProperty="(Canvas.Top)"
-									Duration="0:0:7"
-									>
+                                       Storyboard.TargetProperty="(Grid.RenderTransform).(TransformGroup.Children)[1].(TranslateTransform.Y)"
+                                       Duration="0:0:2.4"
+                                       >
 			<DiscreteDoubleKeyFrame KeyTime="0:0:1" Value="30" />
-			<LinearDoubleKeyFrame KeyTime="0:0:2.4" Value="265" />
-			<DiscreteDoubleKeyFrame KeyTime="0:0:4" Value="-200" />
-			<!-- 見えないところに移動？ -->
-			<DiscreteDoubleKeyFrame KeyTime="0:0:7" Value="30" />
+			<LinearDoubleKeyFrame KeyTime="0:0:2.4" Value="240" />
 		</DoubleAnimationUsingKeyFrames>
+    </Storyboard>
+    <Storyboard x:Key="LeftUpperMoveEnd">
+        <DoubleAnimationUsingKeyFrames Storyboard.Target="{Binding ElementName=Data3}"
+									   Storyboard.TargetProperty="(Grid.RenderTransform).(TransformGroup.Children)[1].(TranslateTransform.X)"
+                                       BeginTime="0:0:7"
+									   Duration="0:0:0"
+									   >
+            <DiscreteDoubleKeyFrame KeyTime="0:0:0" Value="50" />
+        </DoubleAnimationUsingKeyFrames>
 
         <DoubleAnimationUsingKeyFrames Storyboard.Target="{Binding ElementName=Data3}"
-									Storyboard.TargetProperty="(Canvas.Width)"
-									Duration="0:0:7"
-									>
-            <DiscreteDoubleKeyFrame KeyTime="0:0:1" Value="150" />
-            <LinearDoubleKeyFrame KeyTime="0:0:2.4" Value="100" />
-            <!-- 見えないところに移動？ -->
-            <DiscreteDoubleKeyFrame KeyTime="0:0:7" Value="150" />
+                                       Storyboard.TargetProperty="(Grid.RenderTransform).(TransformGroup.Children)[1].(TranslateTransform.Y)"
+                                       BeginTime="0:0:7"
+                                       Duration="0:0:0"
+                                       >
+            <DiscreteDoubleKeyFrame KeyTime="0:0:0" Value="30" />
         </DoubleAnimationUsingKeyFrames>
-        <DoubleAnimationUsingKeyFrames Storyboard.Target="{Binding ElementName=Data3}"
-									Storyboard.TargetProperty="(Canvas.Height)"
-									Duration="0:0:7"
-									>
-            <DiscreteDoubleKeyFrame KeyTime="0:0:1" Value="150" />
-            <LinearDoubleKeyFrame KeyTime="0:0:2.4" Value="100" />
-            <!-- 見えないところに移動？ -->
-            <DiscreteDoubleKeyFrame KeyTime="0:0:7" Value="150" />
+    </Storyboard>
+
+    <Storyboard x:Key="ShrinkForCatch">
+        <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(Grid.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleX)"
+									   Duration="0:0:2.4"
+									   >
+            <DiscreteDoubleKeyFrame KeyTime="0:0:1" Value="1" />
+            <LinearDoubleKeyFrame KeyTime="0:0:2.4" Value="0.666" />
+        </DoubleAnimationUsingKeyFrames>
+
+        <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(Grid.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleY)"
+									   Duration="0:0:2.4"
+									   >
+            <DiscreteDoubleKeyFrame KeyTime="0:0:1" Value="1" />
+            <LinearDoubleKeyFrame KeyTime="0:0:2.4" Value="0.666" />
+        </DoubleAnimationUsingKeyFrames>
+    </Storyboard>
+    
+    <Storyboard x:Key="DataThrown">
+        <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(Grid.RenderTransform).(TransformGroup.Children)[1].(TranslateTransform.X)"
+                                       BeginTime="0:0:4"
+									   Duration="0:0:2"
+									   >
+            <DiscreteDoubleKeyFrame KeyTime="0:0:0" Value="450"/>
+            <LinearDoubleKeyFrame KeyTime="0:0:2" Value="400" />
+            <!-- 見えないところに移動 -->
+            <DiscreteDoubleKeyFrame KeyTime="0:0:2" Value="-200" />
+        </DoubleAnimationUsingKeyFrames>
+        <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(Grid.RenderTransform).(TransformGroup.Children)[1].(TranslateTransform.Y)"
+                                       BeginTime="0:0:4"
+                                       Duration="0:0:2"
+                                       >
+            <DiscreteDoubleKeyFrame KeyTime="0:0:0" Value="240" />
+            <LinearDoubleKeyFrame KeyTime="0:0:2" Value="300" />
+            <!-- 見えないところに移動 -->
+            <DiscreteDoubleKeyFrame KeyTime="0:0:2" Value="-200" />
+        </DoubleAnimationUsingKeyFrames>
+        <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(Grid.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleX)"
+                                       BeginTime="0:0:4"
+									   Duration="0:0:2"
+									   >
+            <DiscreteDoubleKeyFrame KeyTime="0:0:0" Value="0.666" />
+            <LinearDoubleKeyFrame KeyTime="0:0:2" Value="2" />
+            <DiscreteDoubleKeyFrame KeyTime="0:0:2" Value="1" />
+        </DoubleAnimationUsingKeyFrames>
+
+        <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(Grid.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleY)"
+                                       BeginTime="0:0:4"
+									   Duration="0:0:2"
+									   >
+            <DiscreteDoubleKeyFrame KeyTime="0:0:0" Value="0.666" />
+            <LinearDoubleKeyFrame KeyTime="0:0:2" Value="2" />
+            <DiscreteDoubleKeyFrame KeyTime="0:0:2" Value="1" />
         </DoubleAnimationUsingKeyFrames>
     </Storyboard>
 </ResourceDictionary>
