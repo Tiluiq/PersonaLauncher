@@ -12,8 +12,8 @@
     <Image Name="image" Source="ペルソナ_立ち絵_トリミング_通常_200926.png" Opacity="1">
     </Image>
     -->
-    <Image x:Name="image" Source="{Binding RelativeSource={RelativeSource AncestorType={x:Type Grid}},Path=ImageSourceP}"
-		   Stretch="{Binding RelativeSource={RelativeSource AncestorType={x:Type Grid}},Path=ImageStretchP}" />
+    <Image x:Name="image" Source="{Binding RelativeSource={RelativeSource AncestorType={x:Type Grid}},Path=ImageSource}"
+		   Stretch="{Binding RelativeSource={RelativeSource AncestorType={x:Type Grid}},Path=ImageStretch}" />
 	<Grid.Resources>
 		<ResourceDictionary Source="AnimDic.xaml" />
 	</Grid.Resources>

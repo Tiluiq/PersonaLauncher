@@ -26,21 +26,40 @@ namespace PersonaLauncher
 			InitializeComponent();
 		}
 
-		public void Animate()
+        private bool animateLock = false;
+
+        public void Animate(DataItem dataItem)
 		{
-			Storyboard sb = FindResource("storyboard01") as Storyboard;
-			sb.Begin();
-			//this.BeginStoryboard(sb);
+            if (animateLock == false)
+            {
+                animateLock = true;
+                if (dataItem.HasPath())
+                {
+                    Storyboard sb = FindResource("storyboard01") as Storyboard;
+                    sb.Completed += animateUnlock;
+                    sb.Begin();
+
+                    dataItem.Animate();
+                }
+                else
+                    animateLock = false;
+            }
 		}
 
-        public static readonly DependencyProperty Source = DependencyProperty.Register("ImageSourceP", typeof(string), typeof(DataItem));
-        public string ImageSourceP
+        //animateLock解除用イベント
+        private void animateUnlock(object sender, EventArgs e)
+        {
+            animateLock = false;
+        }
+
+        public static readonly DependencyProperty Source = DependencyProperty.Register("ImageSource", typeof(string), typeof(Persona));
+        public string ImageSource
         {
             get { return (string)this.GetValue(Source); }
             set { this.SetValue(Source, value); }
         }
-        public static readonly DependencyProperty Stretch = DependencyProperty.Register("ImageStretchP", typeof(string), typeof(DataItem));
-        public string ImageStretchP
+        public static readonly DependencyProperty Stretch = DependencyProperty.Register("ImageStretch", typeof(string), typeof(Persona));
+        public string ImageStretch
         {
             get { return (string)this.GetValue(Stretch); }
             set { this.SetValue(Stretch, value); }

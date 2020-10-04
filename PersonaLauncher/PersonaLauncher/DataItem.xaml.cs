@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -72,12 +73,13 @@ namespace PersonaLauncher
 			if (openFileDialog.ShowDialog() == true)
 			{
 				filePath = openFileDialog.FileName;
-				this.DataContext = new
-				{
-					fileOrDirectoryName = System.IO.Path.GetFileName(filePath)
-				};
-			}
-		}
+    //            this.DataContext = new
+    //            {
+    //                fileOrDirectoryName = System.IO.Path.GetFileName(filePath)
+				//};
+                this.ImageSource = "ファイル.png";
+            }
+        }
 
 		private void DirectorySelect(object sender, RoutedEventArgs e)
 		{
@@ -99,16 +101,16 @@ namespace PersonaLauncher
 			
 		}
 
-        public void Animate(DataItem data)
+        public void Animate()
         {
             defaultX = TranslateX;
             defaultY = TranslateY;
-
+            
             Storyboard sbParent = new Storyboard();
             Storyboard sb = null;
-            string dataName = data.Name;
+
             //移動前半
-            switch (dataName)
+            switch (this.Name)
             {
                 case "Data0":
                     sb = FindResource("RightLowerMoveBegin") as Storyboard;
@@ -133,7 +135,7 @@ namespace PersonaLauncher
             sb = FindResource("ShrinkForCatch") as Storyboard;
             if (sb != null)
             {
-                Storyboard.SetTarget(sb, data);
+                Storyboard.SetTarget(sb, this);
                 sbParent.Children.Add(sb);
             }
 
@@ -141,12 +143,20 @@ namespace PersonaLauncher
             sb = FindResource("DataThrown") as Storyboard;
             if (sb != null)
             {
-                Storyboard.SetTarget(sb, data);
+                Storyboard.SetTarget(sb, this);
+                sbParent.Children.Add(sb);
+            }
+
+            //投げ回転
+            sb = FindResource("DataThrownRotate") as Storyboard;
+            if (sb != null)
+            {
+                Storyboard.SetTarget(sb, this.image);
                 sbParent.Children.Add(sb);
             }
 
             //移動後半(元の位置に戻すことを想定)
-            switch (dataName)
+            switch (this.Name)
             {
                 case "Data0":
                     sb = FindResource("RightLowerMoveEnd") as Storyboard;
@@ -165,19 +175,34 @@ namespace PersonaLauncher
                     break;
             }
 
-            //sbParent.Completed += ResetTranslate;
-            sbParent.Begin();
+            sbParent.Completed += StartWithAssociation;
+            try { sbParent.Begin(); }
+            catch(Exception e)
+            {
+                Console.WriteLine(e);
+                this.imageRotate.Angle = 40;
+            }
+            
         }
-
-        private void ResetTranslate(object sender, EventArgs e)
+        
+        private void StartWithAssociation(object sender, EventArgs e)
         {
-            TranslateX = defaultX;
-            //TranslateY = defaultY;
-            int x = int.Parse(defaultX);
-            this.translate.X = int.Parse(defaultX);
-            this.translate.Y = int.Parse(defaultY);
+            string pathStr = "";
+            if (filePath != "")
+                pathStr = filePath;
+            else if (directoryPath != "")
+                pathStr = directoryPath;
+
+            if (pathStr != "" && (File.Exists(pathStr) || Directory.Exists(pathStr)))
+            {
+                System.Diagnostics.Process process = System.Diagnostics.Process.Start(pathStr);
+            }
         }
 
+        public bool HasPath()
+        {
+            return filePath != "" || directoryPath != "";
+        }
         //画像サイズに合わせたフォントサイズを取得
         //private int FontSize(string str, System.Drawing.Size size)
         //{

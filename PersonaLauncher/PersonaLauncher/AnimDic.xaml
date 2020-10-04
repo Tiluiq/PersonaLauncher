@@ -222,7 +222,7 @@
             <LinearDoubleKeyFrame KeyTime="0:0:2.4" Value="0.666" />
         </DoubleAnimationUsingKeyFrames>
     </Storyboard>
-    
+
     <Storyboard x:Key="DataThrown">
         <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(Grid.RenderTransform).(TransformGroup.Children)[1].(TranslateTransform.X)"
                                        BeginTime="0:0:4"
@@ -242,6 +242,7 @@
             <!-- 見えないところに移動 -->
             <DiscreteDoubleKeyFrame KeyTime="0:0:2" Value="-200" />
         </DoubleAnimationUsingKeyFrames>
+
         <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(Grid.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleX)"
                                        BeginTime="0:0:4"
 									   Duration="0:0:2"
@@ -250,7 +251,6 @@
             <LinearDoubleKeyFrame KeyTime="0:0:2" Value="2" />
             <DiscreteDoubleKeyFrame KeyTime="0:0:2" Value="1" />
         </DoubleAnimationUsingKeyFrames>
-
         <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(Grid.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleY)"
                                        BeginTime="0:0:4"
 									   Duration="0:0:2"
@@ -259,5 +259,29 @@
             <LinearDoubleKeyFrame KeyTime="0:0:2" Value="2" />
             <DiscreteDoubleKeyFrame KeyTime="0:0:2" Value="1" />
         </DoubleAnimationUsingKeyFrames>
+
+        <!-- 移動しながら回転は無理臭いので(合成されるというよりCenterX, Yの問題な気はするが…(いる場所(windowかキャンパス)の位置を指定する必要がある？))Imageの方を回転させる --><!--
+        <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(RotateTransform.Angle)"
+                                       BeginTime="0:0:4"
+                                       Duration="0:0:2"
+                                       >
+            <LinearDoubleKeyFrame KeyTime="0:0:2" Value="40" />
+            <DiscreteDoubleKeyFrame KeyTime="0:0:2" Value="0" />
+        </DoubleAnimationUsingKeyFrames>-->
+
+
+    </Storyboard>
+    
+    <Storyboard x:Key="DataThrownRotate">
+        <!-- 移動しながら回転は無理臭いので(合成されるというよりCenterX, Yの問題な気はするが…(いる場所(windowかキャンパス)の位置を指定する必要がある？))Imageの方を回転させる -->
+        <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(Image.RenderTransform).(RotateTransform.Angle)"
+                                       BeginTime="0:0:4"
+                                       Duration="0:0:2"
+                                       >
+            <LinearDoubleKeyFrame KeyTime="0:0:2" Value="40" />
+            <DiscreteDoubleKeyFrame KeyTime="0:0:2" Value="0" />
+        </DoubleAnimationUsingKeyFrames>
+
+
     </Storyboard>
 </ResourceDictionary>

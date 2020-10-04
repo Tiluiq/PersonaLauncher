@@ -126,9 +126,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="ファイル.png" />
-  </ItemGroup>
-  <ItemGroup>
     <Resource Include="テキスト1.png" />
     <Resource Include="ディレクトリ3.png" />
     <Resource Include="画像A.png" />
@@ -141,6 +138,12 @@
     <Resource Include="ペルソナ_立ち絵_キャッチ.png" />
     <Resource Include="ペルソナ_立ち絵_投げ.png" />
     <Resource Include="ペルソナ_立ち絵_通常.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ファイル.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="空.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

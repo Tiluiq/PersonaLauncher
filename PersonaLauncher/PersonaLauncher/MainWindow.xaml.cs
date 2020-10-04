@@ -30,19 +30,16 @@ namespace PersonaLauncher
 			//this.MouseLeftButtonDown += (sender, e) => { this.DragMove(); };
 		}
 
+        private bool dataClickLock = false;
+
 		public void Data_Click(object sender, MouseButtonEventArgs e)
 		{
-			//MessageBox.Show("データがクリックされました");
-			if (sender.GetType() == typeof(DataItem))
-			{
-				DataItem dataItem = (DataItem)sender;
+            DataItem dataItem = (DataItem)sender;
 
-                //dataItem.Animate(dataItem.Name);
-                dataItem.Animate(dataItem);
-            }
-
-            this.Persona.Animate();
-		}
+            //dataItem.Animate(dataItem.Name);
+            //dataItem.Animate(dataItem);
+            this.Persona.Animate(dataItem);
+        }
 
 		//ペルソナをドラッグできるようにする
 		private void Persona_Drag(object sender, MouseButtonEventArgs e)
