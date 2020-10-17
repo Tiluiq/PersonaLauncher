@@ -25,9 +25,7 @@ namespace PersonaLauncher
 	/// </summary>
 	public partial class DataItem : Grid
 	{
-		string filePath = "";
-		string directoryPath = "";
-        string defaultX, defaultY;
+		string pathStr = "";
 
 		public DataItem()
 		{
@@ -66,46 +64,57 @@ namespace PersonaLauncher
 
 
 
-        private void FileSelect(object sender, RoutedEventArgs e)
+        public void FileSelect(object sender, RoutedEventArgs e)
 		{
 			OpenFileDialog openFileDialog = new OpenFileDialog();
 
 			if (openFileDialog.ShowDialog() == true)
 			{
-				filePath = openFileDialog.FileName;
-    //            this.DataContext = new
-    //            {
-    //                fileOrDirectoryName = System.IO.Path.GetFileName(filePath)
+				pathStr = openFileDialog.FileName;
+                //this.DataContext = new
+                //{
+                //    fileOrDirectoryName = System.IO.Path.GetFileName(filePath)
 				//};
                 this.ImageSource = "ファイル.png";
+                this.Visibility = Visibility.Visible;
             }
         }
 
-		private void DirectorySelect(object sender, RoutedEventArgs e)
+		public void DirectorySelect(object sender, RoutedEventArgs e)
 		{
 			var openDirectoryDialog = new Microsoft.WindowsAPICodePack.Dialogs.CommonOpenFileDialog();
 			openDirectoryDialog.IsFolderPicker = true;
 
 			if (openDirectoryDialog.ShowDialog() == Microsoft.WindowsAPICodePack.Dialogs.CommonFileDialogResult.Ok)
 			{
-				directoryPath = openDirectoryDialog.FileName;
-				this.DataContext = new
-				{
-					fileOrDirectoryName = System.IO.Path.GetFileName(directoryPath)
-				};
-			}
+                pathStr = openDirectoryDialog.FileName;
+				//this.DataContext = new
+				//{
+				//	fileOrDirectoryName = System.IO.Path.GetFileName(pathStr)
+				//};
+                this.ImageSource = "空.png";
+                this.Visibility = Visibility.Visible;
+            }
 		}
 
-		private void DataLeftClick(object sender, MouseButtonEventArgs e)
+        public void Unselect(object sender, RoutedEventArgs e)
+        {
+            this.DataContext = new
+            {
+                fileOrDirectoryName = ""
+            };
+            this.ImageSource = "空.png";
+            this.Visibility = Visibility.Hidden;
+        }
+
+
+        private void DataLeftClick(object sender, MouseButtonEventArgs e)
 		{
 			
 		}
 
         public void Animate()
         {
-            defaultX = TranslateX;
-            defaultY = TranslateY;
-            
             Storyboard sbParent = new Storyboard();
             Storyboard sb = null;
 
@@ -185,14 +194,9 @@ namespace PersonaLauncher
             
         }
         
+        //選択したファイル・ディレクトリを関連付けで実行
         private void StartWithAssociation(object sender, EventArgs e)
         {
-            string pathStr = "";
-            if (filePath != "")
-                pathStr = filePath;
-            else if (directoryPath != "")
-                pathStr = directoryPath;
-
             if (pathStr != "" && (File.Exists(pathStr) || Directory.Exists(pathStr)))
             {
                 System.Diagnostics.Process process = System.Diagnostics.Process.Start(pathStr);
@@ -201,7 +205,7 @@ namespace PersonaLauncher
 
         public bool HasPath()
         {
-            return filePath != "" || directoryPath != "";
+            return pathStr != "";
         }
         //画像サイズに合わせたフォントサイズを取得
         //private int FontSize(string str, System.Drawing.Size size)
@@ -219,5 +223,7 @@ namespace PersonaLauncher
 
         //	}
         //}
+
+
     }
 }

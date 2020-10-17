@@ -24,15 +24,19 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <DocumentationFile>
+    </DocumentationFile>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
-    <DebugType>pdbonly</DebugType>
+    <DebugType>none</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <DocumentationFile>
+    </DocumentationFile>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.WindowsAPICodePack, Version=1.1.0.0, Culture=neutral, processorArchitecture=MSIL">
@@ -135,15 +139,15 @@
     <Resource Include="関連付け.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="ペルソナ_立ち絵_キャッチ.png" />
-    <Resource Include="ペルソナ_立ち絵_投げ.png" />
-    <Resource Include="ペルソナ_立ち絵_通常.png" />
-  </ItemGroup>
-  <ItemGroup>
     <Resource Include="ファイル.png" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="空.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ペルソナ_立ち絵_キャッチ.png" />
+    <Resource Include="ペルソナ_立ち絵_投げ.png" />
+    <Resource Include="ペルソナ_立ち絵_通常.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

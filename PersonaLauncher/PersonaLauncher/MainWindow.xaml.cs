@@ -52,5 +52,16 @@ namespace PersonaLauncher
 			System.Diagnostics.Process process = System.Diagnostics.Process.Start(@"D:\programming\GitHub\PersonaLauncher\PersonaLauncher\PersonaLauncher\関連付け.png");
 		}
 
+        public DataItem GetDataItem(string dataName)
+        {
+            DataItem dataItem = this.FindName(dataName) as DataItem;
+
+            if (dataItem != null)
+            {
+                return dataItem;
+            }
+            else
+                return null;
+        }
 	}
 }

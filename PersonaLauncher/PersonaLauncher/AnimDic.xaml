@@ -2,9 +2,6 @@
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                     xmlns:local="clr-namespace:PersonaLauncher">
 	<Storyboard x:Key="storyboard01">
-		<!--<ObjectAnimationUsingKeyFrames Storyboard.Target="{Binding ElementName=Persona}"
-									   Storyboard.TargetProperty="(Image.Source)"
-									   Duration="0:0:7">-->
 		<ObjectAnimationUsingKeyFrames Storyboard.Target="{Binding ElementName=Persona, Path=Children[0]}"
 									   Storyboard.TargetProperty="(Image.Source)"
 									   Duration="0:0:7">
@@ -259,17 +256,6 @@
             <LinearDoubleKeyFrame KeyTime="0:0:2" Value="2" />
             <DiscreteDoubleKeyFrame KeyTime="0:0:2" Value="1" />
         </DoubleAnimationUsingKeyFrames>
-
-        <!-- 移動しながら回転は無理臭いので(合成されるというよりCenterX, Yの問題な気はするが…(いる場所(windowかキャンパス)の位置を指定する必要がある？))Imageの方を回転させる --><!--
-        <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(RotateTransform.Angle)"
-                                       BeginTime="0:0:4"
-                                       Duration="0:0:2"
-                                       >
-            <LinearDoubleKeyFrame KeyTime="0:0:2" Value="40" />
-            <DiscreteDoubleKeyFrame KeyTime="0:0:2" Value="0" />
-        </DoubleAnimationUsingKeyFrames>-->
-
-
     </Storyboard>
     
     <Storyboard x:Key="DataThrownRotate">

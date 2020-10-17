@@ -4,17 +4,34 @@
 	   xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
 	   xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
 	   xmlns:local="clr-namespace:PersonaLauncher">
-    <!--<Image Name="image" Source="ペルソナ_立ち絵_背景_通常.png" Opacity="1">-->
-        <!--<Image.Resources>
-		<ResourceDictionary Source="AnimDic.xaml" />
-	</Image.Resources>-->
-    <!--
-    <Image Name="image" Source="ペルソナ_立ち絵_トリミング_通常_200926.png" Opacity="1">
-    </Image>
-    -->
     <Image x:Name="image" Source="{Binding RelativeSource={RelativeSource AncestorType={x:Type Grid}},Path=ImageSource}"
 		   Stretch="{Binding RelativeSource={RelativeSource AncestorType={x:Type Grid}},Path=ImageStretch}" />
 	<Grid.Resources>
 		<ResourceDictionary Source="AnimDic.xaml" />
 	</Grid.Resources>
+
+    <Grid.ContextMenu>
+        <ContextMenu>
+            <MenuItem Header="データ0">
+                <MenuItem x:Name="FileSelectMenu0" Header="ファイル選択" Click="FileSelect"/>
+                <MenuItem Name="DirectorySelectMenu0" Header="ディレクトリ選択"  Click="DirectorySelect"/>
+                <MenuItem Name="UnselectMenu0" Header="選択解除" Click="Unselect" IsEnabled="False" />
+            </MenuItem>
+            <MenuItem Header="データ1">
+                <MenuItem Name="FileSelectMenu1" Header="ファイル選択" Click="FileSelect"/>
+                <MenuItem Name="DirectorySelectMenu1" Header="ディレクトリ選択"  Click="DirectorySelect"/>
+                <MenuItem Name="UnselectMenu1" Header="選択解除" Click="Unselect" IsEnabled="False" />
+            </MenuItem>
+            <MenuItem Header="データ2">
+                <MenuItem Name="FileSelectMenu2" Header="ファイル選択" Click="FileSelect"/>
+                <MenuItem Name="DirectorySelectMenu2" Header="ディレクトリ選択"  Click="DirectorySelect"/>
+                <MenuItem Name="UnselectMenu2" Header="選択解除" Click="Unselect" IsEnabled="False" />
+            </MenuItem>
+            <MenuItem Header="データ3">
+                <MenuItem Name="FileSelectMenu3" Header="ファイル選択" Click="FileSelect"/>
+                <MenuItem Name="DirectorySelectMenu3" Header="ディレクトリ選択"  Click="DirectorySelect"/>
+                <MenuItem Name="UnselectMenu3" Header="選択解除" Click="Unselect" IsEnabled="False" />
+            </MenuItem>
+        </ContextMenu>
+    </Grid.ContextMenu>
 </Grid>

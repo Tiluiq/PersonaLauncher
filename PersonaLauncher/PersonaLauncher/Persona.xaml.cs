@@ -64,5 +64,99 @@ namespace PersonaLauncher
             get { return (string)this.GetValue(Stretch); }
             set { this.SetValue(Stretch, value); }
         }
+
+        //ペルソナにファイルの場所を教える
+        private void FileSelect(object sender, RoutedEventArgs e)
+        {
+            if (sender.GetType() == typeof(MenuItem))
+            {
+                MenuItem menuItem = (MenuItem)sender;
+                DataItem dataItem = GetDataItem(menuItem);
+                if (dataItem != null)
+                {
+                    dataItem.FileSelect(this, e);
+                    //Unselect有効化
+                    MenuItem parentMenu = (MenuItem)menuItem.Parent;
+                    if (parentMenu.Items != null && parentMenu.Items.Count >= 2)
+                    {
+                        MenuItem unselectMenu = (MenuItem)parentMenu.Items[2];
+                        if (unselectMenu.Header.ToString() == "選択解除")
+                            unselectMenu.IsEnabled = true;
+                    }
+                }
+            }
+        }
+
+        //ペルソナにディレクトリの場所を教える
+        private void DirectorySelect(object sender, RoutedEventArgs e)
+        {
+            if (sender.GetType() == typeof(MenuItem))
+            {
+                MenuItem menuItem = (MenuItem)sender;
+                DataItem dataItem = GetDataItem(menuItem);
+                if (dataItem != null)
+                {
+                    dataItem.DirectorySelect(this, e);
+                    //Unselect有効化
+                    MenuItem parentMenu = (MenuItem)menuItem.Parent;
+                    if (parentMenu.Items != null && parentMenu.Items.Count >= 2)
+                    {
+                        MenuItem unselectMenu = (MenuItem)parentMenu.Items[2];
+                        if (unselectMenu.Header.ToString() == "選択解除")
+                            unselectMenu.IsEnabled = true;
+                    }
+                }
+            }
+        }
+
+        private void Unselect(object sender, RoutedEventArgs e)
+        {
+            if (sender.GetType() == typeof(MenuItem))
+            {
+                MenuItem menuItem = (MenuItem)sender;
+                DataItem dataItem = GetDataItem(menuItem);
+                if (dataItem != null)
+                {
+                    //メッセージボックスで確認
+                    if (MessageBox.Show("選択を解除しますか？", "選択解除", MessageBoxButton.YesNo, MessageBoxImage.Question) == MessageBoxResult.Yes)
+                    {
+                        dataItem.Unselect(this, e);
+                        //Unselect無効化
+                        menuItem.IsEnabled = false;
+                    }
+                }
+            }
+        }
+
+        private DataItem GetDataItem(MenuItem menuItem)
+        {
+            if (((MenuItem)(menuItem.Parent)).Header.ToString().StartsWith("データ"))
+            {
+                string header = ((MenuItem)(menuItem.Parent)).Header.ToString();
+                string dataName = "";
+
+                switch (header)
+                {
+                    case "データ0":
+                        dataName = "Data0";
+                        break;
+                    case "データ1":
+                        dataName = "Data1";
+                        break;
+                    case "データ2":
+                        dataName = "Data2";
+                        break;
+                    case "データ3":
+                        dataName = "Data3";
+                        break;
+                }
+
+                DataItem dataItem = ((MainWindow)((Canvas)this.Parent).Parent).GetDataItem(dataName);
+                if (dataItem != null)
+                    return dataItem;
+            }
+
+            return null;
+        }
     }
 }
