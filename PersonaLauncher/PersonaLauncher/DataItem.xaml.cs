@@ -157,7 +157,8 @@ namespace PersonaLauncher
             }
 
             //投げ回転
-            sb = FindResource("DataThrownRotate") as Storyboard;
+            //sb = FindResource("DataThrownRotate") as Storyboard;
+            sb = FindResource("TestStoryboard") as Storyboard;
             if (sb != null)
             {
                 Storyboard.SetTarget(sb, this.image);

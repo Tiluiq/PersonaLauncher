@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PersonaLauncher"
         mc:Ignorable="d"
-        Title="Persona Launcher ver 0.0.10" Height="600" Width="800"
+        Title="Persona Launcher ver 0.0.11" Height="600" Width="800"
 		
 		WindowStyle="SingleBorderWindow"
 		
@@ -23,4 +23,9 @@
 		<local:DataItem x:Name="Data2" ImageSource="空.png" Opacity="1" Visibility="Hidden" ImageStretch="Fill" Height="150" Width="150" TranslateX="600" TranslateY="30"  MouseLeftButtonUp="Data_Click" />
 		<local:DataItem x:Name="Data3" ImageSource="空.png" Opacity="1" Visibility="Hidden" ImageStretch="Fill" Height="150" Width="150" TranslateX="50"  TranslateY="30"  MouseLeftButtonUp="Data_Click" />
 	</Canvas>
+    
+    <Window.Resources>
+		<ResourceDictionary Source="AnimDic.xaml" />
+	</Window.Resources>
+
 </Window>

@@ -7,13 +7,7 @@
 	   mc:Ignorable="d"
 	   MouseLeftButtonUp="DataLeftClick"
 	   >
-	<!--<Grid.ContextMenu>
-		<ContextMenu>
-			<MenuItem Header="ファイル選択" Click="FileSelect" />
-			<MenuItem Header="ディレクトリ選択" Click="DirectorySelect" />
-		</ContextMenu>
-	</Grid.ContextMenu>-->
-    <Image x:Name="image" Source="{Binding RelativeSource={RelativeSource AncestorType={x:Type Grid}},Path=ImageSource}"
+    <local:OpaqueUnclickableImage x:Name="image" Source="{Binding RelativeSource={RelativeSource AncestorType={x:Type Grid}},Path=ImageSource}"
 		   Stretch="{Binding RelativeSource={RelativeSource AncestorType={x:Type Grid}},Path=ImageStretch}">
         <Image.RenderTransformOrigin>
             <Point X="0.5" Y="0.5" />
@@ -21,7 +15,7 @@
         <Image.RenderTransform>
             <RotateTransform x:Name="imageRotate" Angle="0" />
         </Image.RenderTransform>
-    </Image>
+    </local:OpaqueUnclickableImage>
     <TextBlock x:Name="textBlock" Text="{Binding fileOrDirectoryName}" TextAlignment="Center" VerticalAlignment="Center" TextWrapping="Wrap"/>
 
     <!-- 拡大縮小・回転の中心を中央に設定 -->

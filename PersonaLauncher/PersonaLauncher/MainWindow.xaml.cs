@@ -25,10 +25,20 @@ namespace PersonaLauncher
 		{
 			InitializeComponent();
 
-			//this.sb2.Completed += Storyboard_Completed;
-			//どこかを持てばドラッグして移動できるようにする
-			//this.MouseLeftButtonDown += (sender, e) => { this.DragMove(); };
+            //this.sb2.Completed += Storyboard_Completed;
+            //どこかを持てばドラッグして移動できるようにする
+            //this.MouseLeftButtonDown += (sender, e) => { this.DragMove(); };
+            Initialize();
 		}
+
+        private void Initialize()
+        {
+            Storyboard sb = FindResource("Initialize") as Storyboard;
+            if (sb != null)
+            {
+                sb.Begin();
+            }
+        }
 
         private bool dataClickLock = false;
 
