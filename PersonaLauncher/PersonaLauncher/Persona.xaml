@@ -6,9 +6,9 @@
 	   xmlns:local="clr-namespace:PersonaLauncher">
     <local:OpaqueUnclickableImage x:Name="image" Source="{Binding RelativeSource={RelativeSource AncestorType={x:Type Grid}},Path=ImageSource}"
 		   Stretch="{Binding RelativeSource={RelativeSource AncestorType={x:Type Grid}},Path=ImageStretch}" />
-	<Grid.Resources>
-		<ResourceDictionary Source="AnimDic.xaml" />
-	</Grid.Resources>
+	<!--<Grid.Resources>
+		<ResourceDictionary Source="Resourses\AnimDic.xaml" />
+	</Grid.Resources>-->
 
     <Grid.ContextMenu>
         <ContextMenu>

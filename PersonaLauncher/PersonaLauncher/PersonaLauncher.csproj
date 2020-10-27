@@ -82,11 +82,26 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Page Include="AnimDic.xaml">
+    <Content Include="Animation\AnimDic.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Page>
+    </Content>
+    <Content Include="Images\ペルソナ_キャッチ.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\ペルソナ_投げ.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\ペルソナ_通常.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\ディレクトリ.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\ファイル.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Page Include="DataItem.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -147,26 +162,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="テキスト1.png" />
-    <Resource Include="ディレクトリ3.png" />
-    <Resource Include="画像A.png" />
-    <Resource Include="画像B.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="関連付け.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="ファイル.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="空.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="ペルソナ_立ち絵_キャッチ.png" />
-    <Resource Include="ペルソナ_立ち絵_投げ.png" />
-    <Resource Include="ペルソナ_立ち絵_通常.png" />
-  </ItemGroup>
-  <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">
       <Visible>False</Visible>
       <ProductName>Microsoft .NET Framework 4.7.2 %28x86 および x64%29</ProductName>
@@ -178,5 +173,6 @@
       <Install>false</Install>
     </BootstrapperPackage>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

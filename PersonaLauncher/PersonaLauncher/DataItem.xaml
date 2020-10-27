@@ -32,8 +32,7 @@
             <RotateTransform Angle="0" />
         </TransformGroup>
     </Grid.RenderTransform>
-
-    <Grid.Resources>
-		<ResourceDictionary Source="AnimDic.xaml" />
-	</Grid.Resources>
+    <!--<Grid.Resources>
+        <ResourceDictionary Source="Resourses\AnimDic.xaml" />
+	</Grid.Resources>-->
 </Grid>

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.Win32;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -74,14 +75,18 @@ namespace PersonaLauncher
                 DataItem dataItem = GetDataItem(menuItem);
                 if (dataItem != null)
                 {
-                    dataItem.FileSelect(this, e);
-                    //Unselect有効化
-                    MenuItem parentMenu = (MenuItem)menuItem.Parent;
-                    if (parentMenu.Items != null && parentMenu.Items.Count >= 2)
+                    OpenFileDialog openFileDialog = new OpenFileDialog();
+                    if (openFileDialog.ShowDialog() == true)
                     {
-                        MenuItem unselectMenu = (MenuItem)parentMenu.Items[2];
-                        if (unselectMenu.Header.ToString() == "選択解除")
-                            unselectMenu.IsEnabled = true;
+                        dataItem.SetFileName(openFileDialog.FileName);
+                        //Unselect有効化
+                        MenuItem parentMenu = (MenuItem)menuItem.Parent;
+                        if (parentMenu.Items != null && parentMenu.Items.Count >= 2)
+                        {
+                            MenuItem unselectMenu = (MenuItem)parentMenu.Items[2];
+                            if (unselectMenu.Header.ToString() == "選択解除")
+                                unselectMenu.IsEnabled = true;
+                        }
                     }
                 }
             }
@@ -96,19 +101,26 @@ namespace PersonaLauncher
                 DataItem dataItem = GetDataItem(menuItem);
                 if (dataItem != null)
                 {
-                    dataItem.DirectorySelect(this, e);
-                    //Unselect有効化
-                    MenuItem parentMenu = (MenuItem)menuItem.Parent;
-                    if (parentMenu.Items != null && parentMenu.Items.Count >= 2)
+                    var openDirectoryDialog = new Microsoft.WindowsAPICodePack.Dialogs.CommonOpenFileDialog();
+                    openDirectoryDialog.IsFolderPicker = true;
+
+                    if (openDirectoryDialog.ShowDialog() == Microsoft.WindowsAPICodePack.Dialogs.CommonFileDialogResult.Ok)
                     {
-                        MenuItem unselectMenu = (MenuItem)parentMenu.Items[2];
-                        if (unselectMenu.Header.ToString() == "選択解除")
-                            unselectMenu.IsEnabled = true;
+                        dataItem.SetDirectory(openDirectoryDialog.FileName);
+                        //Unselect有効化
+                        MenuItem parentMenu = (MenuItem)menuItem.Parent;
+                        if (parentMenu.Items != null && parentMenu.Items.Count >= 2)
+                        {
+                            MenuItem unselectMenu = (MenuItem)parentMenu.Items[2];
+                            if (unselectMenu.Header.ToString() == "選択解除")
+                                unselectMenu.IsEnabled = true;
+                        }
                     }
                 }
             }
         }
 
+        //ファイル・ディレクトリの場所を忘れさせる
         private void Unselect(object sender, RoutedEventArgs e)
         {
             if (sender.GetType() == typeof(MenuItem))
@@ -120,7 +132,7 @@ namespace PersonaLauncher
                     //メッセージボックスで確認
                     if (MessageBox.Show("選択を解除しますか？", "選択解除", MessageBoxButton.YesNo, MessageBoxImage.Question) == MessageBoxResult.Yes)
                     {
-                        dataItem.Unselect(this, e);
+                        dataItem.Unselect();
                         //Unselect無効化
                         menuItem.IsEnabled = false;
                     }

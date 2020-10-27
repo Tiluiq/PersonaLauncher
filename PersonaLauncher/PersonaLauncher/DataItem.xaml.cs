@@ -25,7 +25,7 @@ namespace PersonaLauncher
 	/// </summary>
 	public partial class DataItem : Grid
 	{
-		string pathStr = "";
+        public string PathStr { get; set; } = "";
 
 		public DataItem()
 		{
@@ -62,48 +62,24 @@ namespace PersonaLauncher
             set { this.SetValue(translateY, value); }
         }
 
-
-
-        public void FileSelect(object sender, RoutedEventArgs e)
-		{
-			OpenFileDialog openFileDialog = new OpenFileDialog();
-
-			if (openFileDialog.ShowDialog() == true)
-			{
-				pathStr = openFileDialog.FileName;
-                //this.DataContext = new
-                //{
-                //    fileOrDirectoryName = System.IO.Path.GetFileName(filePath)
-				//};
-                this.ImageSource = "ファイル.png";
-                this.Visibility = Visibility.Visible;
-            }
+        public void SetFileName(string filePath)
+        {
+            PathStr = filePath;
+            this.ImageSource = "pack://siteoforigin:,,,/Images/ファイル.png";
+            this.Visibility = Visibility.Visible;
         }
 
-		public void DirectorySelect(object sender, RoutedEventArgs e)
-		{
-			var openDirectoryDialog = new Microsoft.WindowsAPICodePack.Dialogs.CommonOpenFileDialog();
-			openDirectoryDialog.IsFolderPicker = true;
-
-			if (openDirectoryDialog.ShowDialog() == Microsoft.WindowsAPICodePack.Dialogs.CommonFileDialogResult.Ok)
-			{
-                pathStr = openDirectoryDialog.FileName;
-				//this.DataContext = new
-				//{
-				//	fileOrDirectoryName = System.IO.Path.GetFileName(pathStr)
-				//};
-                this.ImageSource = "空.png";
-                this.Visibility = Visibility.Visible;
-            }
-		}
-
-        public void Unselect(object sender, RoutedEventArgs e)
+        public void SetDirectory(string directoryPath)
         {
-            this.DataContext = new
-            {
-                fileOrDirectoryName = ""
-            };
-            this.ImageSource = "空.png";
+            PathStr = directoryPath;
+            this.ImageSource = "pack://siteoforigin:,,,/Images/ディレクトリ.png";
+            this.Visibility = Visibility.Visible;
+        }
+
+        public void Unselect()
+        {
+            PathStr = "";
+            this.ImageSource = "pack://siteoforigin:,,,/Images/ディレクトリ.png";
             this.Visibility = Visibility.Hidden;
         }
 
@@ -157,8 +133,8 @@ namespace PersonaLauncher
             }
 
             //投げ回転
-            //sb = FindResource("DataThrownRotate") as Storyboard;
-            sb = FindResource("TestStoryboard") as Storyboard;
+            sb = FindResource("DataThrownRotate") as Storyboard;
+            //sb = FindResource("TestStoryboard") as Storyboard;
             if (sb != null)
             {
                 Storyboard.SetTarget(sb, this.image);
@@ -198,15 +174,15 @@ namespace PersonaLauncher
         //選択したファイル・ディレクトリを関連付けで実行
         private void StartWithAssociation(object sender, EventArgs e)
         {
-            if (pathStr != "" && (File.Exists(pathStr) || Directory.Exists(pathStr)))
+            if (PathStr != "" && (File.Exists(PathStr) || Directory.Exists(PathStr)))
             {
-                System.Diagnostics.Process process = System.Diagnostics.Process.Start(pathStr);
+                System.Diagnostics.Process process = System.Diagnostics.Process.Start(PathStr);
             }
         }
 
         public bool HasPath()
         {
-            return pathStr != "";
+            return PathStr != "";
         }
         //画像サイズに合わせたフォントサイズを取得
         //private int FontSize(string str, System.Drawing.Size size)

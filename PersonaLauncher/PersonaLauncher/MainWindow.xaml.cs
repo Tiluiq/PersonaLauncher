@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -33,6 +34,35 @@ namespace PersonaLauncher
 
         private void Initialize()
         {
+            //リソースディクショナリ設定
+            //this.Resources.Source = new Uri("/AnimDic.xaml", UriKind.Relative);
+
+            //ファイル・ディレクトリパス読み取り・設定
+            //全ての(DataItemの)プロパティを取得・設定
+            System.Configuration.SettingsPropertyCollection settings = Properties.Settings.Default.Properties;  //全てのプロパティ取得
+            foreach (System.Configuration.SettingsProperty settingsProperty in settings)
+            {
+                string propertyName = settingsProperty.Name;
+                DataItem dataItem = GetDataItem(propertyName);
+                if (dataItem != null)
+                {
+                    string pathStr = (string)Properties.Settings.Default[propertyName];
+                    if (File.Exists(pathStr))
+                    {
+                        dataItem.SetFileName(pathStr);
+                    }
+                    else if (Directory.Exists(pathStr))
+                    {
+                        dataItem.SetDirectory(pathStr);
+                    }
+                    else
+                    {
+                        //無効なパス(失敗アクションもあるので一応)
+                    }
+                }
+            }
+
+            //開始時アニメーション実行
             Storyboard sb = FindResource("Initialize") as Storyboard;
             if (sb != null)
             {
@@ -57,21 +87,28 @@ namespace PersonaLauncher
 			this.DragMove();
 		}
 
-		private void Storyboard_Completed(object sender, EventArgs e)
-		{
-			System.Diagnostics.Process process = System.Diagnostics.Process.Start(@"D:\programming\GitHub\PersonaLauncher\PersonaLauncher\PersonaLauncher\関連付け.png");
-		}
-
         public DataItem GetDataItem(string dataName)
         {
             DataItem dataItem = this.FindName(dataName) as DataItem;
 
-            if (dataItem != null)
-            {
-                return dataItem;
-            }
-            else
-                return null;
+            return dataItem;
         }
-	}
+
+        //終了時処理
+        private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            //全ての(DataItemの)プロパティを保存
+            System.Configuration.SettingsPropertyCollection settings = Properties.Settings.Default.Properties;  //全てのプロパティ取得
+            foreach (System.Configuration.SettingsProperty settingsProperty in settings)
+            {
+                string propertyName = settingsProperty.Name;
+                DataItem dataItem = GetDataItem(propertyName);
+                if (dataItem != null)
+                {
+                    Properties.Settings.Default[propertyName] = dataItem.PathStr;
+                }
+            }
+            Properties.Settings.Default.Save();
+        }
+    }
 }

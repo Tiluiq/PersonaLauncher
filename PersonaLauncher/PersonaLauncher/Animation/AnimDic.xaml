@@ -3,70 +3,106 @@
                     xmlns:local="clr-namespace:PersonaLauncher">
     <!--MainWindowのコンストラクタで呼ぶInitializeで呼ぶアニメーション-->
     <Storyboard x:Key="Initialize">
-        <Storyboard x:Name="InitializePersona">
+        <!--ペルソナ初期化-->
+        <Storyboard>
             <ObjectAnimationUsingKeyFrames Storyboard.Target="{Binding ElementName=Persona, Path=Children[0]}"
-                                           Storyboard.TargetProperty="(Image.Source)"
-                                           Duration="00:00:01">
+                                           Storyboard.TargetProperty="(Image.Source)">
                 <DiscreteObjectKeyFrame KeyTime="00:00:00">
                     <DiscreteObjectKeyFrame.Value>
-                        <BitmapImage UriSource="ペルソナ_立ち絵_通常.png" />
+                        <BitmapImage UriSource="pack://siteoforigin:,,,/Images/ペルソナ_通常.png" />
                     </DiscreteObjectKeyFrame.Value>
                 </DiscreteObjectKeyFrame>
             </ObjectAnimationUsingKeyFrames>
         </Storyboard>
-        <!--<Storyboard x:Name="InitializeData0">
+        <!--データ0初期化-->
+        <Storyboard>
+            <ObjectAnimationUsingKeyFrames Storyboard.Target="{Binding ElementName=Data0, Path=Children[0]}"
+                                           Storyboard.TargetProperty="(Image.Source)"
+                                           Duration="00:00:01">
+                <DiscreteObjectKeyFrame KeyTime="00:00:00">
+                    <DiscreteObjectKeyFrame.Value>
+                        <BitmapImage UriSource="pack://siteoforigin:,,,/Images/ファイル.png" />
+                    </DiscreteObjectKeyFrame.Value>
+                </DiscreteObjectKeyFrame>
+            </ObjectAnimationUsingKeyFrames>
             <DoubleAnimationUsingKeyFrames Storyboard.Target="{Binding ElementName=Data0}"
 									   Storyboard.TargetProperty="(Grid.RenderTransform).(TransformGroup.Children)[1].(TranslateTransform.X)"
 									   Duration="00:00:01">
-                <DiscreteDoubleKeyFrame KeyTime="00:00:00" Value="300" />
+                <DiscreteDoubleKeyFrame KeyTime="00:00:00" Value="570" />
             </DoubleAnimationUsingKeyFrames>
             <DoubleAnimationUsingKeyFrames Storyboard.Target="{Binding ElementName=Data0}"
                                        Storyboard.TargetProperty="(Grid.RenderTransform).(TransformGroup.Children)[1].(TranslateTransform.Y)"
                                        Duration="00:00:01">
-                <DiscreteDoubleKeyFrame KeyTime="00:00:00" Value="300" />
+                <DiscreteDoubleKeyFrame KeyTime="00:00:00" Value="330" />
             </DoubleAnimationUsingKeyFrames>
-            --><!--<ObjectAnimationUsingKeyFrames Storyboard.Target="{Binding ElementName=Data0}"
-                                       Storyboard.TargetProperty="Visibility"
-                                       Duration="00:00:01">
-                <DiscreteObjectKeyFrame KeyTime="00:00:00" Value="{x:Static Visibility.Visible}" />
-            </ObjectAnimationUsingKeyFrames>--><!--
+            
         </Storyboard>
-        <Storyboard x:Name="InitializeData1">
+        <!--データ1初期化-->
+        <Storyboard>
+            <ObjectAnimationUsingKeyFrames Storyboard.Target="{Binding ElementName=Data1, Path=Children[0]}"
+                                           Storyboard.TargetProperty="(Image.Source)"
+                                           Duration="00:00:01">
+                <DiscreteObjectKeyFrame KeyTime="00:00:00">
+                    <DiscreteObjectKeyFrame.Value>
+                        <BitmapImage UriSource="pack://siteoforigin:,,,/Images/ファイル.png" />
+                    </DiscreteObjectKeyFrame.Value>
+                </DiscreteObjectKeyFrame>
+            </ObjectAnimationUsingKeyFrames>
             <DoubleAnimationUsingKeyFrames Storyboard.Target="{Binding ElementName=Data1}"
 									   Storyboard.TargetProperty="(Grid.RenderTransform).(TransformGroup.Children)[1].(TranslateTransform.X)"
 									   Duration="00:00:01">
-                <DiscreteDoubleKeyFrame KeyTime="00:00:00" Value="300" />
+                <DiscreteDoubleKeyFrame KeyTime="00:00:00" Value="30" />
             </DoubleAnimationUsingKeyFrames>
             <DoubleAnimationUsingKeyFrames Storyboard.Target="{Binding ElementName=Data1}"
                                        Storyboard.TargetProperty="(Grid.RenderTransform).(TransformGroup.Children)[1].(TranslateTransform.Y)"
                                        Duration="00:00:01">
-                <DiscreteDoubleKeyFrame KeyTime="00:00:00" Value="300" />
+                <DiscreteDoubleKeyFrame KeyTime="00:00:00" Value="330" />
             </DoubleAnimationUsingKeyFrames>
         </Storyboard>
-        <Storyboard x:Name="InitializeData2">
+        <!--データ2初期化-->
+        <Storyboard>
+            <ObjectAnimationUsingKeyFrames Storyboard.Target="{Binding ElementName=Data2, Path=Children[0]}"
+                                           Storyboard.TargetProperty="(Image.Source)"
+                                           Duration="00:00:01">
+                <DiscreteObjectKeyFrame KeyTime="00:00:00">
+                    <DiscreteObjectKeyFrame.Value>
+                        <BitmapImage UriSource="pack://siteoforigin:,,,/Images/ファイル.png" />
+                    </DiscreteObjectKeyFrame.Value>
+                </DiscreteObjectKeyFrame>
+            </ObjectAnimationUsingKeyFrames>
             <DoubleAnimationUsingKeyFrames Storyboard.Target="{Binding ElementName=Data2}"
 									   Storyboard.TargetProperty="(Grid.RenderTransform).(TransformGroup.Children)[1].(TranslateTransform.X)"
 									   Duration="00:00:01">
-                <DiscreteDoubleKeyFrame KeyTime="00:00:00" Value="300" />
+                <DiscreteDoubleKeyFrame KeyTime="00:00:00" Value="570" />
             </DoubleAnimationUsingKeyFrames>
             <DoubleAnimationUsingKeyFrames Storyboard.Target="{Binding ElementName=Data2}"
                                        Storyboard.TargetProperty="(Grid.RenderTransform).(TransformGroup.Children)[1].(TranslateTransform.Y)"
                                        Duration="00:00:01">
-                <DiscreteDoubleKeyFrame KeyTime="00:00:00" Value="300" />
+                <DiscreteDoubleKeyFrame KeyTime="00:00:00" Value="30" />
             </DoubleAnimationUsingKeyFrames>
         </Storyboard>
-        <Storyboard x:Name="InitializeData3">
-            <DoubleAnimationUsingKeyFrames Storyboard.Target="{Binding ElementName=Data3}"
+        <!--データ3初期化-->
+        <Storyboard>
+            <ObjectAnimationUsingKeyFrames Storyboard.Target="{Binding ElementName=Data3, Path=Children[0]}"
+                                           Storyboard.TargetProperty="(Image.Source)"
+                                           Duration="00:00:01">
+                <DiscreteObjectKeyFrame KeyTime="00:00:00">
+                    <DiscreteObjectKeyFrame.Value>
+                        <BitmapImage UriSource="pack://siteoforigin:,,,/Images/ファイル.png" />
+                    </DiscreteObjectKeyFrame.Value>
+                </DiscreteObjectKeyFrame>
+
+            </ObjectAnimationUsingKeyFrames><DoubleAnimationUsingKeyFrames Storyboard.Target="{Binding ElementName=Data3}"
 									   Storyboard.TargetProperty="(Grid.RenderTransform).(TransformGroup.Children)[1].(TranslateTransform.X)"
 									   Duration="00:00:01">
-                <DiscreteDoubleKeyFrame KeyTime="00:00:00" Value="300" />
+                <DiscreteDoubleKeyFrame KeyTime="00:00:00" Value="30" />
             </DoubleAnimationUsingKeyFrames>
             <DoubleAnimationUsingKeyFrames Storyboard.Target="{Binding ElementName=Data3}"
                                        Storyboard.TargetProperty="(Grid.RenderTransform).(TransformGroup.Children)[1].(TranslateTransform.Y)"
                                        Duration="00:00:01">
-                <DiscreteDoubleKeyFrame KeyTime="00:00:00" Value="300" />
+                <DiscreteDoubleKeyFrame KeyTime="00:00:00" Value="30" />
             </DoubleAnimationUsingKeyFrames>
-        </Storyboard>-->
+        </Storyboard>
     </Storyboard>
     
 	<Storyboard x:Key="storyboard01">
@@ -75,22 +111,22 @@
 									   Duration="0:0:7">
 			<DiscreteObjectKeyFrame KeyTime="0:0:0">
 				<DiscreteObjectKeyFrame.Value>
-					<BitmapImage UriSource="ペルソナ_立ち絵_通常.png" />
+                    <BitmapImage UriSource="pack://siteoforigin:,,,/Images/ペルソナ_通常.png" />
 				</DiscreteObjectKeyFrame.Value>
 			</DiscreteObjectKeyFrame>
 			<DiscreteObjectKeyFrame KeyTime="0:0:1">
 				<DiscreteObjectKeyFrame.Value>
-					<BitmapImage UriSource="ペルソナ_立ち絵_キャッチ.png" />
+                    <BitmapImage UriSource="pack://siteoforigin:,,,/Images/ペルソナ_キャッチ.png" />
 				</DiscreteObjectKeyFrame.Value>
 			</DiscreteObjectKeyFrame>
-			<DiscreteObjectKeyFrame KeyTime="0:0:4">
+            <DiscreteObjectKeyFrame KeyTime="0:0:4">
+                <DiscreteObjectKeyFrame.Value>
+                    <BitmapImage UriSource="pack://siteoforigin:,,,/Images/ペルソナ_投げ.png" />
+                </DiscreteObjectKeyFrame.Value>
+            </DiscreteObjectKeyFrame>
+            <DiscreteObjectKeyFrame KeyTime="0:0:7">
 				<DiscreteObjectKeyFrame.Value>
-					<BitmapImage UriSource="ペルソナ_立ち絵_投げ.png" />
-				</DiscreteObjectKeyFrame.Value>
-			</DiscreteObjectKeyFrame>
-			<DiscreteObjectKeyFrame KeyTime="0:0:7">
-				<DiscreteObjectKeyFrame.Value>
-					<BitmapImage UriSource="ペルソナ_立ち絵_通常.png" />
+                    <BitmapImage UriSource="pack://siteoforigin:,,,/Images/ペルソナ_通常.png" />
 				</DiscreteObjectKeyFrame.Value>
 			</DiscreteObjectKeyFrame>
 		</ObjectAnimationUsingKeyFrames>
@@ -102,13 +138,13 @@
 									   Storyboard.TargetProperty="(Grid.RenderTransform).(TransformGroup.Children)[1].(TranslateTransform.X)"
 									   Duration="0:0:2.4"
 									   >
-            <DiscreteDoubleKeyFrame KeyTime="0:0:1" Value="600" />
+            <DiscreteDoubleKeyFrame KeyTime="0:0:1" Value="570" />
             <EasingDoubleKeyFrame KeyTime="0:0:1.6" Value="675">
                 <EasingDoubleKeyFrame.EasingFunction>
                     <QuadraticEase EasingMode="EaseOut" />
                 </EasingDoubleKeyFrame.EasingFunction>
             </EasingDoubleKeyFrame>
-            <EasingDoubleKeyFrame KeyTime="0:0:2.4" Value="450">
+            <EasingDoubleKeyFrame KeyTime="0:0:2.4" Value="430">
                 <EasingDoubleKeyFrame.EasingFunction>
                     <QuadraticEase EasingMode="EaseIn" />
                 </EasingDoubleKeyFrame.EasingFunction>
@@ -128,7 +164,7 @@
                                        BeginTime="0:0:7"
 									   Duration="0:0:0"
 									   >
-            <DiscreteDoubleKeyFrame KeyTime="0:0:0" Value="600" />
+            <DiscreteDoubleKeyFrame KeyTime="0:0:0" Value="570" />
         </DoubleAnimationUsingKeyFrames>
 
         <DoubleAnimationUsingKeyFrames Storyboard.Target="{Binding ElementName=Data0}"
@@ -146,13 +182,13 @@
 									   Storyboard.TargetProperty="(Grid.RenderTransform).(TransformGroup.Children)[1].(TranslateTransform.X)"
 									   Duration="0:0:2.4"
 									   >
-            <DiscreteDoubleKeyFrame KeyTime="0:0:1" Value="50" />
+            <DiscreteDoubleKeyFrame KeyTime="0:0:1" Value="30" />
             <EasingDoubleKeyFrame KeyTime="0:0:2" Value="500">
                 <EasingDoubleKeyFrame.EasingFunction>
                     <QuadraticEase EasingMode="EaseOut" />
                 </EasingDoubleKeyFrame.EasingFunction>
             </EasingDoubleKeyFrame>
-            <EasingDoubleKeyFrame KeyTime="0:0:2.4" Value="450">
+            <EasingDoubleKeyFrame KeyTime="0:0:2.4" Value="430">
                 <EasingDoubleKeyFrame.EasingFunction>
                     <QuadraticEase EasingMode="EaseIn" />
                 </EasingDoubleKeyFrame.EasingFunction>
@@ -172,7 +208,7 @@
                                        BeginTime="0:0:7"
 									   Duration="0:0:0"
 									   >
-            <DiscreteDoubleKeyFrame KeyTime="0:0:0" Value="50" />
+            <DiscreteDoubleKeyFrame KeyTime="0:0:0" Value="30" />
         </DoubleAnimationUsingKeyFrames>
 
         <DoubleAnimationUsingKeyFrames Storyboard.Target="{Binding ElementName=Data1}"
@@ -190,13 +226,13 @@
 									   Storyboard.TargetProperty="(Grid.RenderTransform).(TransformGroup.Children)[1].(TranslateTransform.X)"
 									   Duration="0:0:2.4"
 									   >
-            <DiscreteDoubleKeyFrame KeyTime="0:0:1" Value="600" />
+            <DiscreteDoubleKeyFrame KeyTime="0:0:1" Value="570" />
             <EasingDoubleKeyFrame KeyTime="0:0:1.6" Value="675">
                 <EasingDoubleKeyFrame.EasingFunction>
                     <QuadraticEase EasingMode="EaseOut" />
                 </EasingDoubleKeyFrame.EasingFunction>
             </EasingDoubleKeyFrame>
-            <EasingDoubleKeyFrame KeyTime="0:0:2.4" Value="450">
+            <EasingDoubleKeyFrame KeyTime="0:0:2.4" Value="430">
                 <EasingDoubleKeyFrame.EasingFunction>
                     <QuadraticEase EasingMode="EaseIn" />
                 </EasingDoubleKeyFrame.EasingFunction>
@@ -216,7 +252,7 @@
                                        BeginTime="0:0:7"
 									   Duration="0:0:0"
 									   >
-            <DiscreteDoubleKeyFrame KeyTime="0:0:0" Value="600" />
+            <DiscreteDoubleKeyFrame KeyTime="0:0:0" Value="570" />
         </DoubleAnimationUsingKeyFrames>
 
         <DoubleAnimationUsingKeyFrames Storyboard.Target="{Binding ElementName=Data2}"
@@ -234,13 +270,13 @@
 									   Storyboard.TargetProperty="(Grid.RenderTransform).(TransformGroup.Children)[1].(TranslateTransform.X)"
 									   Duration="0:0:2.4"
 									   >
-			<DiscreteDoubleKeyFrame KeyTime="0:0:1" Value="50" />
+			<DiscreteDoubleKeyFrame KeyTime="0:0:1" Value="30" />
 			<EasingDoubleKeyFrame KeyTime="0:0:2" Value="500">
 				<EasingDoubleKeyFrame.EasingFunction>
 					<QuadraticEase EasingMode="EaseOut" />
 				</EasingDoubleKeyFrame.EasingFunction>
 			</EasingDoubleKeyFrame>
-			<EasingDoubleKeyFrame KeyTime="0:0:2.4" Value="450">
+			<EasingDoubleKeyFrame KeyTime="0:0:2.4" Value="430">
 				<EasingDoubleKeyFrame.EasingFunction>
 					<QuadraticEase EasingMode="EaseIn" />
 				</EasingDoubleKeyFrame.EasingFunction>
@@ -260,7 +296,7 @@
                                        BeginTime="0:0:7"
 									   Duration="0:0:0"
 									   >
-            <DiscreteDoubleKeyFrame KeyTime="0:0:0" Value="50" />
+            <DiscreteDoubleKeyFrame KeyTime="0:0:0" Value="30" />
         </DoubleAnimationUsingKeyFrames>
 
         <DoubleAnimationUsingKeyFrames Storyboard.Target="{Binding ElementName=Data3}"
@@ -293,8 +329,8 @@
                                        BeginTime="0:0:4"
 									   Duration="0:0:2"
 									   >
-            <DiscreteDoubleKeyFrame KeyTime="0:0:0" Value="450"/>
-            <LinearDoubleKeyFrame KeyTime="0:0:2" Value="400" />
+            <DiscreteDoubleKeyFrame KeyTime="0:0:0" Value="430"/>
+            <LinearDoubleKeyFrame KeyTime="0:0:2" Value="320" />
             <!-- 見えないところに移動 -->
             <DiscreteDoubleKeyFrame KeyTime="0:0:2" Value="-200" />
         </DoubleAnimationUsingKeyFrames>
@@ -325,7 +361,7 @@
             <DiscreteDoubleKeyFrame KeyTime="0:0:2" Value="1" />
         </DoubleAnimationUsingKeyFrames>
     </Storyboard>
-    
+
     <Storyboard x:Key="DataThrownRotate">
         <!-- 移動しながら回転は無理臭いので(合成されるというよりCenterX, Yの問題な気はするが…(いる場所(windowかキャンパス)の位置を指定する必要がある？))Imageの方を回転させる -->
         <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(Image.RenderTransform).(RotateTransform.Angle)"
@@ -335,12 +371,5 @@
             <LinearDoubleKeyFrame KeyTime="0:0:2" Value="40" />
             <DiscreteDoubleKeyFrame KeyTime="0:0:2" Value="0" />
         </DoubleAnimationUsingKeyFrames>
-
-
-    </Storyboard>
-    <Storyboard x:Key="TestStoryboard">
-        <ParallelTimeline>
-            <Storyboard  />
-        </ParallelTimeline>
     </Storyboard>
 </ResourceDictionary>
