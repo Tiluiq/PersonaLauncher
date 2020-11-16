@@ -93,82 +93,80 @@ namespace PersonaLauncher
         {
             Storyboard sbParent = new Storyboard();
             Storyboard sb = null;
-            try
+
+            //移動前半
+            switch (this.Name)
             {
-                //移動前半
-                switch (this.Name)
-                {
-                    case "Data0":
-                        sb = FindResource("RightLowerMoveBegin") as Storyboard;
-                        goto default;
-                    case "Data1":
-                        sb = FindResource("LeftLowerMoveBegin") as Storyboard;
-                        goto default;
-                    case "Data2":
-                        sb = FindResource("RightUpperMoveBegin") as Storyboard;
-                        goto default;
-                    case "Data3":
-                        sb = FindResource("LeftUpperMoveBegin") as Storyboard;
-                        goto default;
-                    default:
-                        //sb.Completed += ResetTranslate;
-                        //sb.Begin();
-                        sbParent.Children.Add(sb);
-                        break;
-                }
-
-                //キャッチ時の縮小
-                sb = FindResource("ShrinkForCatch") as Storyboard;
-                if (sb != null)
-                {
-                    Storyboard.SetTarget(sb, this);
+                case "Data0":
+                    sb = FindResource("RightLowerMoveBegin") as Storyboard;
+                    goto default;
+                case "Data1":
+                    sb = FindResource("LeftLowerMoveBegin") as Storyboard;
+                    goto default;
+                case "Data2":
+                    sb = FindResource("RightUpperMoveBegin") as Storyboard;
+                    goto default;
+                case "Data3":
+                    sb = FindResource("LeftUpperMoveBegin") as Storyboard;
+                    goto default;
+                default:
+                    //sb.Completed += ResetTranslate;
+                    //sb.Begin();
                     sbParent.Children.Add(sb);
-                }
-
-                //投げ動作
-                sb = FindResource("DataThrown") as Storyboard;
-                if (sb != null)
-                {
-                    Storyboard.SetTarget(sb, this);
-                    sbParent.Children.Add(sb);
-                }
-
-                //投げ回転
-                sb = FindResource("DataThrownRotate") as Storyboard;
-                //sb = FindResource("TestStoryboard") as Storyboard;
-                if (sb != null)
-                {
-                    Storyboard.SetTarget(sb, this.image);
-                    sbParent.Children.Add(sb);
-                }
-
-                //移動後半(元の位置に戻すことを想定)
-                switch (this.Name)
-                {
-                    case "Data0":
-                        sb = FindResource("RightLowerMoveEnd") as Storyboard;
-                        goto default;
-                    case "Data1":
-                        sb = FindResource("LeftLowerMoveEnd") as Storyboard;
-                        goto default;
-                    case "Data2":
-                        sb = FindResource("RightUpperMoveEnd") as Storyboard;
-                        goto default;
-                    case "Data3":
-                        sb = FindResource("LeftUpperMoveEnd") as Storyboard;
-                        goto default;
-                    default:
-                        sbParent.Children.Add(sb);
-                        break;
-                }
-
-                sbParent.Completed += StartWithAssociation;
-                sbParent.Begin();
+                    break;
             }
-            catch (Exception e)
+
+            //キャッチ時の縮小
+            sb = FindResource("ShrinkForCatch") as Storyboard;
+            if (sb != null)
+            {
+                Storyboard.SetTarget(sb, this);
+                sbParent.Children.Add(sb);
+            }
+
+            //投げ動作
+            sb = FindResource("DataThrown") as Storyboard;
+            if (sb != null)
+            {
+                Storyboard.SetTarget(sb, this);
+                sbParent.Children.Add(sb);
+            }
+
+            //投げ回転
+            sb = FindResource("DataThrownRotate") as Storyboard;
+            //sb = FindResource("TestStoryboard") as Storyboard;
+            if (sb != null)
+            {
+                Storyboard.SetTarget(sb, this.image);
+                sbParent.Children.Add(sb);
+            }
+
+            //移動後半(元の位置に戻すことを想定)
+            switch (this.Name)
+            {
+                case "Data0":
+                    sb = FindResource("RightLowerMoveEnd") as Storyboard;
+                    goto default;
+                case "Data1":
+                    sb = FindResource("LeftLowerMoveEnd") as Storyboard;
+                    goto default;
+                case "Data2":
+                    sb = FindResource("RightUpperMoveEnd") as Storyboard;
+                    goto default;
+                case "Data3":
+                    sb = FindResource("LeftUpperMoveEnd") as Storyboard;
+                    goto default;
+                default:
+                    sbParent.Children.Add(sb);
+                    break;
+            }
+
+            sbParent.Completed += StartWithAssociation;
+            try { sbParent.Begin(); }
+            catch(Exception e)
             {
                 Console.WriteLine(e);
-                MessageBox.Show("アニメーションでエラーが出ました\n" + e.ToString(), "エラー", MessageBoxButton.OK, MessageBoxImage.Exclamation);
+                this.imageRotate.Angle = 40;
             }
             
         }

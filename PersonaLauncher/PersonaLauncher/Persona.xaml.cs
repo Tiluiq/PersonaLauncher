@@ -66,7 +66,7 @@ namespace PersonaLauncher
             set { this.SetValue(Stretch, value); }
         }
 
-        // 玲音にファイルの場所を教える
+        //ペルソナにファイルの場所を教える
         private void FileSelect(object sender, RoutedEventArgs e)
         {
             if (sender.GetType() == typeof(MenuItem))
@@ -92,7 +92,7 @@ namespace PersonaLauncher
             }
         }
 
-        // 玲音にディレクトリの場所を教える
+        //ペルソナにディレクトリの場所を教える
         private void DirectorySelect(object sender, RoutedEventArgs e)
         {
             if (sender.GetType() == typeof(MenuItem))
