@@ -63,10 +63,18 @@ namespace PersonaLauncher
             }
 
             //開始時アニメーション実行
-            Storyboard sb = FindResource("Initialize") as Storyboard;
-            if (sb != null)
+            try
             {
-                sb.Begin();
+                Storyboard sb = FindResource("Initialize") as Storyboard;
+                if (sb != null)
+                {
+                    sb.Begin();
+                }
+            }
+            catch(Exception e)
+            {
+                MessageBox.Show("アニメーションInitializeでエラーが発生しました\n" + e, "エラー", MessageBoxButton.OK, MessageBoxImage.Error);
+                this.Close();
             }
         }
 
@@ -81,7 +89,7 @@ namespace PersonaLauncher
             this.Persona.Animate(dataItem);
         }
 
-		//ペルソナをドラッグできるようにする
+		// 玲音をドラッグできるようにする
 		private void Persona_Drag(object sender, MouseButtonEventArgs e)
 		{
 			this.DragMove();
