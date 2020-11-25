@@ -49,11 +49,11 @@ namespace PersonaLauncher
                     string pathStr = (string)Properties.Settings.Default[propertyName];
                     if (File.Exists(pathStr))
                     {
-                        dataItem.SetFileName(pathStr);
+                        this.Persona.SetFile(dataItem, pathStr);
                     }
                     else if (Directory.Exists(pathStr))
                     {
-                        dataItem.SetDirectory(pathStr);
+                        this.Persona.SetDirectory(dataItem, pathStr);
                     }
                     else
                     {

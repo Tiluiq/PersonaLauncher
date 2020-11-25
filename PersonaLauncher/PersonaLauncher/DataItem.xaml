@@ -16,7 +16,6 @@
             <RotateTransform x:Name="imageRotate" Angle="0" />
         </Image.RenderTransform>
     </local:OpaqueUnclickableImage>
-    <TextBlock x:Name="textBlock" Text="{Binding fileOrDirectoryName}" TextAlignment="Center" VerticalAlignment="Center" TextWrapping="Wrap"/>
 
     <!-- 拡大縮小・回転の中心を中央に設定 -->
     <Grid.RenderTransformOrigin>

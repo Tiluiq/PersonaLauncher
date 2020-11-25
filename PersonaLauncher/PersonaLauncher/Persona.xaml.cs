@@ -36,7 +36,7 @@ namespace PersonaLauncher
                 animateLock = true;
                 if (dataItem.HasPath())
                 {
-                    Storyboard sb = FindResource("storyboard01") as Storyboard;
+                    Storyboard sb = FindResource("PersonaThrow") as Storyboard;
                     sb.Completed += animateUnlock;
                     sb.Begin();
 
@@ -78,17 +78,28 @@ namespace PersonaLauncher
                     OpenFileDialog openFileDialog = new OpenFileDialog();
                     if (openFileDialog.ShowDialog() == true)
                     {
-                        dataItem.SetFileName(openFileDialog.FileName);
-                        //Unselect有効化
-                        MenuItem parentMenu = (MenuItem)menuItem.Parent;
-                        if (parentMenu.Items != null && parentMenu.Items.Count >= 2)
-                        {
-                            MenuItem unselectMenu = (MenuItem)parentMenu.Items[2];
-                            if (unselectMenu.Header.ToString() == "選択解除")
-                                unselectMenu.IsEnabled = true;
-                        }
+                        SetFile(dataItem, openFileDialog.FileName);
                     }
                 }
+            }
+        }
+        //Initialize(mainの)とFileSelectで呼び出す用
+        public void SetFile(DataItem dataItem, string filePath)
+        {
+            dataItem.SetFile(filePath);
+            //Unselect有効化
+            MenuItem parentMenu = GetMenuItemHeader(dataItem);
+            unselectEnable(parentMenu);
+        }
+
+        //SetFileとSetDirectoryで選択解除を有効化する用 HeaderXを受け取ることを想定
+        private void unselectEnable(MenuItem menuItem)
+        {
+            if (menuItem != null && menuItem.Items != null && menuItem.Items.Count >= 2)
+            {
+                MenuItem unselectMenu = (MenuItem)menuItem.Items[2];
+                if (unselectMenu.Header.ToString() == "選択解除")
+                    unselectMenu.IsEnabled = true;
             }
         }
 
@@ -106,19 +117,20 @@ namespace PersonaLauncher
 
                     if (openDirectoryDialog.ShowDialog() == Microsoft.WindowsAPICodePack.Dialogs.CommonFileDialogResult.Ok)
                     {
-                        dataItem.SetDirectory(openDirectoryDialog.FileName);
-                        //Unselect有効化
-                        MenuItem parentMenu = (MenuItem)menuItem.Parent;
-                        if (parentMenu.Items != null && parentMenu.Items.Count >= 2)
-                        {
-                            MenuItem unselectMenu = (MenuItem)parentMenu.Items[2];
-                            if (unselectMenu.Header.ToString() == "選択解除")
-                                unselectMenu.IsEnabled = true;
-                        }
+                        SetDirectory(dataItem, openDirectoryDialog.FileName);
                     }
                 }
             }
         }
+        //Initialize(mainの)とDirectorySelectで呼び出す用
+        public void SetDirectory(DataItem dataItem, string filePath)
+        {
+            dataItem.SetDirectory(filePath);
+            //Unselect有効化
+            MenuItem parentMenu = GetMenuItemHeader(dataItem);
+            unselectEnable(parentMenu);
+        }
+
 
         //ファイル・ディレクトリの場所を忘れさせる
         private void Unselect(object sender, RoutedEventArgs e)
@@ -140,32 +152,68 @@ namespace PersonaLauncher
             }
         }
 
+        private MainWindow GetParentMainWindow()
+        {
+            return (MainWindow)((Canvas)this.Parent).Parent;
+        }
+
         private DataItem GetDataItem(MenuItem menuItem)
         {
-            if (((MenuItem)(menuItem.Parent)).Header.ToString().StartsWith("データ"))
+            if (((MenuItem)(menuItem.Parent)).Name.StartsWith("Header"))
             {
-                string header = ((MenuItem)(menuItem.Parent)).Header.ToString();
+                string headerName = ((MenuItem)(menuItem.Parent)).Name;
                 string dataName = "";
 
-                switch (header)
+                switch (headerName)
                 {
-                    case "データ0":
+                    case "Header0":
                         dataName = "Data0";
                         break;
-                    case "データ1":
+                    case "Header1":
                         dataName = "Data1";
                         break;
-                    case "データ2":
+                    case "Header2":
                         dataName = "Data2";
                         break;
-                    case "データ3":
+                    case "Header3":
                         dataName = "Data3";
                         break;
                 }
 
-                DataItem dataItem = ((MainWindow)((Canvas)this.Parent).Parent).GetDataItem(dataName);
+                DataItem dataItem = (DataItem)GetParentMainWindow().FindName(dataName);
                 if (dataItem != null)
                     return dataItem;
+            }
+
+            return null;
+        }
+
+        private MenuItem GetMenuItemHeader(DataItem dataItem)
+        {
+            if (dataItem.Name.StartsWith("Data"))
+            {
+                string dataName = dataItem.Name;
+                string headerName = "";
+
+                switch (dataName)
+                {
+                    case "Data0":
+                        headerName = "Header0";
+                        break;
+                    case "Data1":
+                        headerName = "Header1";
+                        break;
+                    case "Data2":
+                        headerName = "Header2";
+                        break;
+                    case "Data3":
+                        headerName = "Header3";
+                        break;
+                }
+
+                MenuItem header = (MenuItem)this.FindName(headerName);//(MenuItem)GetParentMainWindow().FindName(dataName);
+                if (header != null)
+                    return header;
             }
 
             return null;

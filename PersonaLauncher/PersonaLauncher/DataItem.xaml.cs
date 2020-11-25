@@ -62,25 +62,54 @@ namespace PersonaLauncher
             set { this.SetValue(translateY, value); }
         }
 
-        public void SetFileName(string filePath)
+        public void SetFile(string filePath)
         {
             PathStr = filePath;
-            this.ImageSource = "pack://siteoforigin:,,,/Images/ファイル.png";
-            this.Visibility = Visibility.Visible;
+            Storyboard sb = null;
+            sb = FindResource("ShowForFile") as Storyboard;
+            if (sb != null)
+            {
+                Storyboard.SetTarget(sb, this.image);
+                sb.Begin();
+            }
+            sb = null;
+            sb = FindResource("DataVisible") as Storyboard;
+            if (sb != null)
+            {
+                Storyboard.SetTarget(sb, this);
+                sb.Begin();
+            }
         }
 
         public void SetDirectory(string directoryPath)
         {
             PathStr = directoryPath;
-            this.ImageSource = "pack://siteoforigin:,,,/Images/ディレクトリ.png";
-            this.Visibility = Visibility.Visible;
+            Storyboard sb = null;
+            sb = FindResource("ShowForDirectory") as Storyboard;
+            if (sb != null)
+            {
+                Storyboard.SetTarget(sb, this.image);
+                sb.Begin();
+            }
+            sb = null;
+            sb = FindResource("DataVisible") as Storyboard;
+            if (sb != null)
+            {
+                Storyboard.SetTarget(sb, this);
+                sb.Begin();
+            }
         }
 
         public void Unselect()
         {
             PathStr = "";
-            this.ImageSource = "pack://siteoforigin:,,,/Images/ディレクトリ.png";
-            this.Visibility = Visibility.Hidden;
+            Storyboard sb = null;
+            sb = FindResource("DataHidden") as Storyboard;
+            if (sb != null)
+            {
+                Storyboard.SetTarget(sb, this);
+                sb.Begin();
+            }
         }
 
 
@@ -99,16 +128,16 @@ namespace PersonaLauncher
                 switch (this.Name)
                 {
                     case "Data0":
-                        sb = FindResource("RightLowerMoveBegin") as Storyboard;
+                        sb = FindResource("RightLowerMoveCatch") as Storyboard;
                         goto default;
                     case "Data1":
-                        sb = FindResource("LeftLowerMoveBegin") as Storyboard;
+                        sb = FindResource("LeftLowerMoveCatch") as Storyboard;
                         goto default;
                     case "Data2":
-                        sb = FindResource("RightUpperMoveBegin") as Storyboard;
+                        sb = FindResource("RightUpperMoveCatch") as Storyboard;
                         goto default;
                     case "Data3":
-                        sb = FindResource("LeftUpperMoveBegin") as Storyboard;
+                        sb = FindResource("LeftUpperMoveCatch") as Storyboard;
                         goto default;
                     default:
                         //sb.Completed += ResetTranslate;
@@ -135,14 +164,13 @@ namespace PersonaLauncher
 
                 //投げ回転
                 sb = FindResource("DataThrownRotate") as Storyboard;
-                //sb = FindResource("TestStoryboard") as Storyboard;
                 if (sb != null)
                 {
                     Storyboard.SetTarget(sb, this.image);
                     sbParent.Children.Add(sb);
                 }
 
-                //移動後半(元の位置に戻すことを想定)
+                //移動終了(元の位置に戻すことを想定)
                 switch (this.Name)
                 {
                     case "Data0":

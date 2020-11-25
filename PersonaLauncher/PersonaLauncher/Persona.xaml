@@ -12,22 +12,22 @@
 
     <Grid.ContextMenu>
         <ContextMenu>
-            <MenuItem Header="データ0">
+            <MenuItem Header="データ0" x:Name="Header0">
                 <MenuItem x:Name="FileSelectMenu0" Header="ファイル選択" Click="FileSelect"/>
                 <MenuItem Name="DirectorySelectMenu0" Header="ディレクトリ選択"  Click="DirectorySelect"/>
                 <MenuItem Name="UnselectMenu0" Header="選択解除" Click="Unselect" IsEnabled="False" />
             </MenuItem>
-            <MenuItem Header="データ1">
+            <MenuItem Header="データ1" x:Name="Header1">
                 <MenuItem Name="FileSelectMenu1" Header="ファイル選択" Click="FileSelect"/>
                 <MenuItem Name="DirectorySelectMenu1" Header="ディレクトリ選択"  Click="DirectorySelect"/>
                 <MenuItem Name="UnselectMenu1" Header="選択解除" Click="Unselect" IsEnabled="False" />
             </MenuItem>
-            <MenuItem Header="データ2">
+            <MenuItem Header="データ2" x:Name="Header2">
                 <MenuItem Name="FileSelectMenu2" Header="ファイル選択" Click="FileSelect"/>
                 <MenuItem Name="DirectorySelectMenu2" Header="ディレクトリ選択"  Click="DirectorySelect"/>
                 <MenuItem Name="UnselectMenu2" Header="選択解除" Click="Unselect" IsEnabled="False" />
             </MenuItem>
-            <MenuItem Header="データ3">
+            <MenuItem Header="データ3" x:Name="Header3">
                 <MenuItem Name="FileSelectMenu3" Header="ファイル選択" Click="FileSelect"/>
                 <MenuItem Name="DirectorySelectMenu3" Header="ディレクトリ選択"  Click="DirectorySelect"/>
                 <MenuItem Name="UnselectMenu3" Header="選択解除" Click="Unselect" IsEnabled="False" />
