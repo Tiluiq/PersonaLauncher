@@ -7,8 +7,7 @@
 	   mc:Ignorable="d"
 	   MouseLeftButtonUp="DataLeftClick"
 	   >
-    <local:OpaqueUnclickableImage x:Name="image" Source="{Binding RelativeSource={RelativeSource AncestorType={x:Type Grid}},Path=ImageSource}"
-		   Stretch="{Binding RelativeSource={RelativeSource AncestorType={x:Type Grid}},Path=ImageStretch}">
+    <local:OpaqueUnclickableImage x:Name="image">
         <Image.RenderTransformOrigin>
             <Point X="0.5" Y="0.5" />
         </Image.RenderTransformOrigin>
@@ -25,9 +24,7 @@
     <Grid.RenderTransform>
         <TransformGroup>
             <ScaleTransform ScaleX="1" ScaleY="1" />
-            <TranslateTransform x:Name="translate"
-                                X="{Binding RelativeSource={RelativeSource AncestorType={x:Type Grid}},Path=TranslateX}"
-                                Y="{Binding RelativeSource={RelativeSource AncestorType={x:Type Grid}},Path=TranslateY}"/>
+            <TranslateTransform x:Name="translate" />
             <RotateTransform Angle="0" />
         </TransformGroup>
     </Grid.RenderTransform>

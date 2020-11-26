@@ -52,19 +52,6 @@ namespace PersonaLauncher
             animateLock = false;
         }
 
-        public static readonly DependencyProperty Source = DependencyProperty.Register("ImageSource", typeof(string), typeof(Persona));
-        public string ImageSource
-        {
-            get { return (string)this.GetValue(Source); }
-            set { this.SetValue(Source, value); }
-        }
-        public static readonly DependencyProperty Stretch = DependencyProperty.Register("ImageStretch", typeof(string), typeof(Persona));
-        public string ImageStretch
-        {
-            get { return (string)this.GetValue(Stretch); }
-            set { this.SetValue(Stretch, value); }
-        }
-
         // 玲音にファイルの場所を教える
         private void FileSelect(object sender, RoutedEventArgs e)
         {

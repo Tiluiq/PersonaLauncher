@@ -36,32 +36,6 @@ namespace PersonaLauncher
 			};
         }
 
-		public static readonly DependencyProperty Source = DependencyProperty.Register("ImageSource", typeof(string), typeof(DataItem));
-		public string ImageSource
-		{
-			get { return (string)this.GetValue(Source); }
-			set { this.SetValue(Source, value); }
-		}
-		public static readonly DependencyProperty Stretch = DependencyProperty.Register("ImageStretch", typeof(string), typeof(DataItem));
-		public string ImageStretch
-		{
-			get { return (string)this.GetValue(Stretch); }
-			set { this.SetValue(Stretch, value); }
-		}
-
-        public static readonly DependencyProperty translateX = DependencyProperty.Register("TranslateX", typeof(string), typeof(DataItem));
-        public string TranslateX
-        {
-            get { return (string)this.GetValue(translateX); }
-            set { this.SetValue(translateX, value); }
-        }
-        public static readonly DependencyProperty translateY = DependencyProperty.Register("TranslateY", typeof(string), typeof(DataItem));
-        public string TranslateY
-        {
-            get { return (string)this.GetValue(translateY); }
-            set { this.SetValue(translateY, value); }
-        }
-
         public void SetFile(string filePath)
         {
             PathStr = filePath;
