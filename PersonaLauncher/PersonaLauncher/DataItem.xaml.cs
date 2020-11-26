@@ -65,6 +65,13 @@ namespace PersonaLauncher
         public void SetFile(string filePath)
         {
             PathStr = filePath;
+
+            //ツールチップ設定
+            string fileName = System.IO.Path.GetFileName(PathStr);
+            ToolTip tt = new ToolTip();
+            tt.Content = fileName;
+            this.ToolTip = tt;
+
             Storyboard sb = null;
             sb = FindResource("ShowForFile") as Storyboard;
             if (sb != null)
@@ -84,6 +91,13 @@ namespace PersonaLauncher
         public void SetDirectory(string directoryPath)
         {
             PathStr = directoryPath;
+
+            //ツールチップ設定
+            string directoryName = System.IO.Path.GetFileName(PathStr);
+            ToolTip tt = new ToolTip();
+            tt.Content = directoryName;
+            this.ToolTip = tt;
+
             Storyboard sb = null;
             sb = FindResource("ShowForDirectory") as Storyboard;
             if (sb != null)

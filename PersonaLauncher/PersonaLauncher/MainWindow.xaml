@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PersonaLauncher"
         mc:Ignorable="d"
-        Title="Persona Launcher ver 0.0.13" Height="600" Width="800"
+        Title="Persona Launcher ver 0.0.15" Height="600" Width="800"
 		
 		WindowStyle="SingleBorderWindow"
 		
