@@ -1,5 +1,4 @@
-﻿using Microsoft.Win32;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -75,8 +74,8 @@ namespace PersonaLauncher
                 DataItem dataItem = GetDataItem(menuItem);
                 if (dataItem != null)
                 {
-                    OpenFileDialog openFileDialog = new OpenFileDialog();
-                    if (openFileDialog.ShowDialog() == true)
+                    var openFileDialog = new System.Windows.Forms.OpenFileDialog();
+                    if (openFileDialog.ShowDialog() == System.Windows.Forms.DialogResult.OK)
                     {
                         SetFile(dataItem, openFileDialog.FileName);
                     }
@@ -112,12 +111,11 @@ namespace PersonaLauncher
                 DataItem dataItem = GetDataItem(menuItem);
                 if (dataItem != null)
                 {
-                    var openDirectoryDialog = new Microsoft.WindowsAPICodePack.Dialogs.CommonOpenFileDialog();
-                    openDirectoryDialog.IsFolderPicker = true;
+                    var openDirectoryDialog = new System.Windows.Forms.OpenFileDialog() { FileName = "DummyFileName", Filter = "Folder|.", CheckFileExists = false };
 
-                    if (openDirectoryDialog.ShowDialog() == Microsoft.WindowsAPICodePack.Dialogs.CommonFileDialogResult.Ok)
+                    if (openDirectoryDialog.ShowDialog() == System.Windows.Forms.DialogResult.OK)
                     {
-                        SetDirectory(dataItem, openDirectoryDialog.FileName);
+                        SetDirectory(dataItem, System.IO.Path.GetDirectoryName(openDirectoryDialog.FileName));
                     }
                 }
             }
