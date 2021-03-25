@@ -98,11 +98,14 @@ namespace PersonaLauncher
                 DataItem dataItem = GetDataItem(menuItem);
                 if (dataItem != null)
                 {
-                    var openDirectoryDialog = new System.Windows.Forms.OpenFileDialog() { FileName = "DummyFileName", Filter = "Folder|.", CheckFileExists = false };
+                    //var openDirectoryDialog = new System.Windows.Forms.OpenFileDialog() { FileName = "ファイル名には何か入っていればOK", Filter = "Folder|.", CheckFileExists = false };
+                    var openDirectoryDialog = new System.Windows.Forms.FolderBrowserDialog();
+                    openDirectoryDialog.Description = "ディレクトリを選択";
 
                     if (openDirectoryDialog.ShowDialog() == System.Windows.Forms.DialogResult.OK)
                     {
-                        SetDirectory(dataItem, System.IO.Path.GetDirectoryName(openDirectoryDialog.FileName));
+                        //SetDirectory(dataItem, System.IO.Path.GetDirectoryName(openDirectoryDialog.FileName));
+                        SetDirectory(dataItem, System.IO.Path.GetDirectoryName(openDirectoryDialog.SelectedPath));
                     }
                 }
             }

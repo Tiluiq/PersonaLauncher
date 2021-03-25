@@ -5,12 +5,12 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PersonaLauncher"
         mc:Ignorable="d"
-        Title="Persona Launcher ver 0.0.17" Height="600" Width="800"
+        Title="Persona Launcher ver 0.0.18" Height="600" Width="800"
 		
 		WindowStyle="SingleBorderWindow"
 		
 		Background="#111122"
-		ResizeMode="NoResize"
+		ResizeMode="CanMinimize"
         
         Closing="Window_Closing"
 		>

@@ -78,17 +78,32 @@
                     <BitmapImage UriSource="pack://siteoforigin:,,,/Images/ペルソナ_通常.png" />
 				</DiscreteObjectKeyFrame.Value>
 			</DiscreteObjectKeyFrame>
-			<DiscreteObjectKeyFrame KeyTime="0:0:1">
+			<DiscreteObjectKeyFrame KeyTime="0:0:2">
 				<DiscreteObjectKeyFrame.Value>
                     <BitmapImage UriSource="pack://siteoforigin:,,,/Images/ペルソナ_キャッチ.png" />
 				</DiscreteObjectKeyFrame.Value>
 			</DiscreteObjectKeyFrame>
             <DiscreteObjectKeyFrame KeyTime="0:0:4">
                 <DiscreteObjectKeyFrame.Value>
-                    <BitmapImage UriSource="pack://siteoforigin:,,,/Images/ペルソナ_投げ.png" />
+                    <BitmapImage UriSource="pack://siteoforigin:,,,/Images/ペルソナ_投げ_6.png" />
                 </DiscreteObjectKeyFrame.Value>
             </DiscreteObjectKeyFrame>
-            <DiscreteObjectKeyFrame KeyTime="0:0:7">
+            <DiscreteObjectKeyFrame KeyTime="0:0:4.1">
+                <DiscreteObjectKeyFrame.Value>
+                    <BitmapImage UriSource="pack://siteoforigin:,,,/Images/ペルソナ_投げ_7.png" />
+                </DiscreteObjectKeyFrame.Value>
+            </DiscreteObjectKeyFrame>
+            <DiscreteObjectKeyFrame KeyTime="0:0:4.2">
+                <DiscreteObjectKeyFrame.Value>
+                    <BitmapImage UriSource="pack://siteoforigin:,,,/Images/ペルソナ_投げ_8.png" />
+                </DiscreteObjectKeyFrame.Value>
+            </DiscreteObjectKeyFrame>
+            <DiscreteObjectKeyFrame KeyTime="0:0:5.5">
+                <DiscreteObjectKeyFrame.Value>
+                    <BitmapImage UriSource="pack://siteoforigin:,,,/Images/ペルソナ_投げ_9.png" />
+                </DiscreteObjectKeyFrame.Value>
+            </DiscreteObjectKeyFrame>
+            <DiscreteObjectKeyFrame KeyTime="0:0:6">
 				<DiscreteObjectKeyFrame.Value>
                     <BitmapImage UriSource="pack://siteoforigin:,,,/Images/ペルソナ_通常.png" />
 				</DiscreteObjectKeyFrame.Value>
@@ -108,7 +123,7 @@
                     <QuadraticEase EasingMode="EaseOut" />
                 </EasingDoubleKeyFrame.EasingFunction>
             </EasingDoubleKeyFrame>
-            <EasingDoubleKeyFrame KeyTime="0:0:2.4" Value="430">
+            <EasingDoubleKeyFrame KeyTime="0:0:2.4" Value="420">
                 <EasingDoubleKeyFrame.EasingFunction>
                     <QuadraticEase EasingMode="EaseIn" />
                 </EasingDoubleKeyFrame.EasingFunction>
@@ -119,7 +134,7 @@
                                        Duration="0:0:2.4"
                                        >
             <DiscreteDoubleKeyFrame KeyTime="0:0:1" Value="330" />
-            <LinearDoubleKeyFrame KeyTime="0:0:2.4" Value="240" />
+            <LinearDoubleKeyFrame KeyTime="0:0:2.4" Value="190" />
         </DoubleAnimationUsingKeyFrames>
     </Storyboard>
     <Storyboard x:Key="RightLowerMoveEnd">
@@ -152,7 +167,7 @@
                     <QuadraticEase EasingMode="EaseOut" />
                 </EasingDoubleKeyFrame.EasingFunction>
             </EasingDoubleKeyFrame>
-            <EasingDoubleKeyFrame KeyTime="0:0:2.4" Value="430">
+            <EasingDoubleKeyFrame KeyTime="0:0:2.4" Value="420">
                 <EasingDoubleKeyFrame.EasingFunction>
                     <QuadraticEase EasingMode="EaseIn" />
                 </EasingDoubleKeyFrame.EasingFunction>
@@ -163,7 +178,7 @@
                                        Duration="0:0:2.4"
                                        >
             <DiscreteDoubleKeyFrame KeyTime="0:0:1" Value="330" />
-            <LinearDoubleKeyFrame KeyTime="0:0:2.4" Value="240" />
+            <LinearDoubleKeyFrame KeyTime="0:0:2.4" Value="190" />
         </DoubleAnimationUsingKeyFrames>
     </Storyboard>
     <Storyboard x:Key="LeftLowerMoveEnd">
@@ -196,7 +211,7 @@
                     <QuadraticEase EasingMode="EaseOut" />
                 </EasingDoubleKeyFrame.EasingFunction>
             </EasingDoubleKeyFrame>
-            <EasingDoubleKeyFrame KeyTime="0:0:2.4" Value="430">
+            <EasingDoubleKeyFrame KeyTime="0:0:2.4" Value="420">
                 <EasingDoubleKeyFrame.EasingFunction>
                     <QuadraticEase EasingMode="EaseIn" />
                 </EasingDoubleKeyFrame.EasingFunction>
@@ -207,7 +222,7 @@
                                        Duration="0:0:2.4"
                                        >
             <DiscreteDoubleKeyFrame KeyTime="0:0:1" Value="30" />
-            <LinearDoubleKeyFrame KeyTime="0:0:2.4" Value="240" />
+            <LinearDoubleKeyFrame KeyTime="0:0:2.4" Value="190" />
         </DoubleAnimationUsingKeyFrames>
     </Storyboard>
     <Storyboard x:Key="RightUpperMoveEnd">
@@ -240,7 +255,7 @@
 					<QuadraticEase EasingMode="EaseOut" />
 				</EasingDoubleKeyFrame.EasingFunction>
 			</EasingDoubleKeyFrame>
-			<EasingDoubleKeyFrame KeyTime="0:0:2.4" Value="430">
+			<EasingDoubleKeyFrame KeyTime="0:0:2.4" Value="420">
 				<EasingDoubleKeyFrame.EasingFunction>
 					<QuadraticEase EasingMode="EaseIn" />
 				</EasingDoubleKeyFrame.EasingFunction>
@@ -251,7 +266,7 @@
                                        Duration="0:0:2.4"
                                        >
 			<DiscreteDoubleKeyFrame KeyTime="0:0:1" Value="30" />
-			<LinearDoubleKeyFrame KeyTime="0:0:2.4" Value="240" />
+			<LinearDoubleKeyFrame KeyTime="0:0:2.4" Value="190" />
 		</DoubleAnimationUsingKeyFrames>
     </Storyboard>
     <Storyboard x:Key="LeftUpperMoveEnd">
@@ -293,7 +308,7 @@
                                        BeginTime="0:0:4"
 									   Duration="0:0:2"
 									   >
-            <DiscreteDoubleKeyFrame KeyTime="0:0:0" Value="430"/>
+            <DiscreteDoubleKeyFrame KeyTime="0:0:0" Value="420"/>
             <LinearDoubleKeyFrame KeyTime="0:0:2" Value="320" />
             <!-- 見えないところに移動 -->
             <DiscreteDoubleKeyFrame KeyTime="0:0:2" Value="-200" />
@@ -302,7 +317,7 @@
                                        BeginTime="0:0:4"
                                        Duration="0:0:2"
                                        >
-            <DiscreteDoubleKeyFrame KeyTime="0:0:0" Value="240" />
+            <DiscreteDoubleKeyFrame KeyTime="0:0:0" Value="190" />
             <LinearDoubleKeyFrame KeyTime="0:0:2" Value="300" />
             <!-- 見えないところに移動 -->
             <DiscreteDoubleKeyFrame KeyTime="0:0:2" Value="-200" />
