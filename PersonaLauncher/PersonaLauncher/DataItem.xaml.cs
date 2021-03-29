@@ -198,10 +198,13 @@ namespace PersonaLauncher
             }
         }
 
-        public bool HasPath()
+        //パスが存在しているか
+        public bool IsValidPath()
         {
-            return PathStr != "";
+            return File.Exists(PathStr) || Directory.Exists(PathStr);
         }
+
+
         //画像サイズに合わせたフォントサイズを取得
         //private int FontSize(string str, System.Drawing.Size size)
         //{

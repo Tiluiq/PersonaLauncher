@@ -33,7 +33,7 @@ namespace PersonaLauncher
             if (animateLock == false)
             {
                 animateLock = true;
-                if (dataItem.HasPath())
+                if (dataItem.IsValidPath())
                 {
                     Storyboard sb = FindResource("PersonaThrow") as Storyboard;
                     sb.Completed += animateUnlock;
@@ -105,7 +105,7 @@ namespace PersonaLauncher
                     if (openDirectoryDialog.ShowDialog() == System.Windows.Forms.DialogResult.OK)
                     {
                         //SetDirectory(dataItem, System.IO.Path.GetDirectoryName(openDirectoryDialog.FileName));
-                        SetDirectory(dataItem, System.IO.Path.GetDirectoryName(openDirectoryDialog.SelectedPath));
+                        SetDirectory(dataItem, openDirectoryDialog.SelectedPath);
                     }
                 }
             }
