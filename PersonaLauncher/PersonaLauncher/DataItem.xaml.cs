@@ -25,7 +25,7 @@ namespace PersonaLauncher
 	/// </summary>
 	public partial class DataItem : Grid
 	{
-        public string PathStr { get; set; } = "";
+        public string PathStr { get; private set; } = "";
 
 		public DataItem()
 		{
@@ -40,7 +40,7 @@ namespace PersonaLauncher
         {
             PathStr = filePath;
 
-            //ツールチップ設定
+            //ツールチップ(マウスをのせたときに出てくるやつ)設定
             string fileName = System.IO.Path.GetFileName(PathStr);
             ToolTip tt = new ToolTip();
             tt.Content = fileName;
@@ -88,11 +88,12 @@ namespace PersonaLauncher
             }
         }
 
+        //ファイル・ディレクトリの指定を解除
         public void Unselect()
         {
             PathStr = "";
             Storyboard sb = null;
-            sb = FindResource("DataHidden") as Storyboard;
+            sb = FindResource("DataHidden") as Storyboard;  //データ非表示
             if (sb != null)
             {
                 Storyboard.SetTarget(sb, this);
@@ -192,7 +193,7 @@ namespace PersonaLauncher
         //選択したファイル・ディレクトリを関連付けで実行
         private void StartWithAssociation(object sender, EventArgs e)
         {
-            if (PathStr != "" && (File.Exists(PathStr) || Directory.Exists(PathStr)))
+            if (PathStr != "" && IsValidPath())
             {
                 System.Diagnostics.Process process = System.Diagnostics.Process.Start(PathStr);
             }

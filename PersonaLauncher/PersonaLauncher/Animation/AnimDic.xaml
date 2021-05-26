@@ -26,7 +26,19 @@
                                        Duration="00:00:01">
                 <DiscreteDoubleKeyFrame KeyTime="00:00:00" Value="330" />
             </DoubleAnimationUsingKeyFrames>
-            
+            <!--↓のような形で高さや幅を変えることも可能-->
+            <!--
+            <DoubleAnimationUsingKeyFrames Storyboard.Target="{Binding ElementName=Data0}"
+                                           Storyboard.TargetProperty="(Image.Height)"
+                                           Duration="00:00:01">
+                <DiscreteDoubleKeyFrame KeyTime="00:00:00" Value="500" />
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.Target="{Binding ElementName=Data0}"
+                                           Storyboard.TargetProperty="(Image.Width)"
+                                           Duration="00:00:01">
+                <DiscreteDoubleKeyFrame KeyTime="00:00:00" Value="500" />
+            </DoubleAnimationUsingKeyFrames>
+            -->
         </Storyboard>
         <!--データ1初期化-->
         <Storyboard>

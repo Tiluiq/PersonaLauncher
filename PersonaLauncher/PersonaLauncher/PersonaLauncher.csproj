@@ -87,12 +87,24 @@
     <Content Include="Images\ファイル.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Resource Include="Images\ペルソナ_キャッチ.png" />
-    <Resource Include="Images\ペルソナ_投げ_6.png" />
-    <Resource Include="Images\ペルソナ_投げ_7.png" />
-    <Resource Include="Images\ペルソナ_投げ_8.png" />
-    <Resource Include="Images\ペルソナ_投げ_9.png" />
-    <Resource Include="Images\ペルソナ_通常.png" />
+    <Resource Include="Images\ペルソナ_投げ_6.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\ペルソナ_投げ_7.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\ペルソナ_投げ_8.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\ペルソナ_投げ_9.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\ペルソナ_キャッチ.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\ペルソナ_通常.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
     <Page Include="DataItem.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

@@ -5,29 +5,29 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PersonaLauncher"
         mc:Ignorable="d"
-        Title="Persona Launcher ver 0.0.19" Height="600" Width="800"
-		
-		WindowStyle="SingleBorderWindow"
-		
-		Background="#111122"
-		ResizeMode="CanMinimize"
+        Title="Persona Launcher ver 0.0.20" Height="600" Width="800"
+        
+        WindowStyle="SingleBorderWindow"
+        
+        Background="#111122"
+        ResizeMode="CanMinimize"
         
         Closing="Window_Closing"
-		>
+        >
     <!--AllowsTransparency="True"-->
     <Canvas>
 
         <!---->
-		<local:Persona x:Name="Persona" Opacity="1" Height="691" Width="794"/>
+        <local:Persona x:Name="Persona" Opacity="1" Height="571" Width="794" MouseDown="Persona_Drag"/>
 
         <local:DataItem x:Name="Data0" Opacity="1" Visibility="Hidden" Height="120" Width="180" MouseLeftButtonUp="Data_Click" />
         <local:DataItem x:Name="Data1" Opacity="1" Visibility="Hidden" Height="120" Width="180" MouseLeftButtonUp="Data_Click" />
         <local:DataItem x:Name="Data2" Opacity="1" Visibility="Hidden" Height="120" Width="180" MouseLeftButtonUp="Data_Click" />
         <local:DataItem x:Name="Data3" Opacity="1" Visibility="Hidden" Height="120" Width="180" MouseLeftButtonUp="Data_Click" />
-	</Canvas>
+    </Canvas>
     
     <Window.Resources>
         <ResourceDictionary Source="Animation\AnimDic.xaml" />
-	</Window.Resources>
+    </Window.Resources>
 
 </Window>

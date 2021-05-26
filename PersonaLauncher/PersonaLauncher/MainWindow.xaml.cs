@@ -92,7 +92,14 @@ namespace PersonaLauncher
 		// 玲音をドラッグできるようにする
 		private void Persona_Drag(object sender, MouseButtonEventArgs e)
 		{
-			this.DragMove();
+            try
+            {
+                this.DragMove();
+            }
+            catch (Exception)
+            {
+                //左クリックでドラッグ中に右クリックするとエラー吐くのを握りつぶし
+            }
 		}
 
         public DataItem GetDataItem(string dataName)

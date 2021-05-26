@@ -81,7 +81,7 @@ namespace PersonaLauncher
         //SetFileとSetDirectoryで選択解除を有効化する用 HeaderXを受け取ることを想定
         private void unselectEnable(MenuItem menuItem)
         {
-            if (menuItem != null && menuItem.Items != null && menuItem.Items.Count >= 2)
+            if (menuItem != null && menuItem.Items != null && menuItem.Items.Count > 2)
             {
                 MenuItem unselectMenu = (MenuItem)menuItem.Items[2];
                 if (unselectMenu.Header.ToString() == "選択解除")
