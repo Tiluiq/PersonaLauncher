@@ -1,9 +1,10 @@
 # PersonaLauncher
 ペルソナちゃんが設定しておいたファイル等を開いてくれます。
 
-使い方等まだ整備してませんがご了承ください。
+[使い方はこちら](https://github.com/Tiluiq/PersonaLauncher/blob/test/USAGE.md)
 
 一応軽い使い方も入っているデモ的な動画→https://youtu.be/b5m9U16qIY4
+
 
 ## ライセンス
 本アプリケーションはlainTTLに基づき作成した非公式のアプリケーションです。
